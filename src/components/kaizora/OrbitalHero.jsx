@@ -163,7 +163,7 @@ const LIQUID_BASE = {
   sub: "Mercury, refracting.",
   body: "The Orb breathes between every transmission from the models.",
   cta: "Continue",
-  duration: 3200,
+  duration: 4200,
   media: { type: "video", src: ORB_VIDEO, poster: ORB_IMG },
 };
 
