@@ -33,7 +33,7 @@ function MagneticLink({ item }) {
       onMouseLeave={() => setPos({ x: 0, y: 0 })}
       animate={{ x: pos.x, y: pos.y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.6 }}
-      className="relative text-[9px] font-semibold tracking-wide text-zinc-300 hover:text-white transition-all duration-300 rounded-full border border-[#ff3344] h-7 px-3.5 flex items-center hover:border-[#D90429] hover:bg-[#D90429]/10 hover:shadow-[0_0_14px_rgba(217,4,41,0.7),0_0_28px_rgba(217,4,41,0.35)]"
+      className="relative text-[9px] font-semibold tracking-wide text-zinc-300 hover:text-white transition-all duration-300 rounded-full border border-[#ff3344] h-7 px-3.5 flex items-center hover:border-[#D90429] hover:bg-[#D90429]/10 hover:shadow-[0_0_14px_rgba(217,4,41,0.91),0_0_28px_rgba(217,4,41,0.46)]"
     >
       {item.label}
     </motion.a>
