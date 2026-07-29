@@ -5,7 +5,7 @@ import { Image } from "@/components/ui/image";
 const ORB_IMG = "https://media.base44.com/images/public/6a6984ae3df2ae3b9c071a1c/00ac9dd39_generated_image.png";
 const ORB_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/e62a7b4ba_Liquid_Orb.mp4";
 const DECISION_IMG = "https://media.base44.com/images/public/6a6984ae3df2ae3b9c071a1c/9ded05d0d_generated_5149b298.png";
-const DECISION_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/5e60bfb65_ScreenRecording2026-07-29at120131AM.mov";
+const DECISION_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/9c986880f_Decision_Layer_Video.mp4";
 const PULSE_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/d9dfdfc32_Pulse_Model_Video.mp4";
 const STUDIO_IMG = "https://media.base44.com/images/public/6a6984ae3df2ae3b9c071a1c/f2cd5c785_generated_049d3fdd.png";
 const STUDIO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/5f2bb4cc1_ScreenRecording2026-07-29at121128AM.mov";
@@ -13,12 +13,12 @@ const STUDIO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c0
 const KLING_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/321c6a8a4_Kling_Style_Clip.mp4";
 const SEEDANCE_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/a7979bf9e_Seedance_20_Clip.mp4";
 const VEO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/485cff1f7_Veo_Style_Clip.mp4";
-const SORA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/b25a151c7_Sora_Style_Clip.mp4";
-const RUNWAY_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/f20a1b0da_Runway_Gen-3_Clip.mp4";
-const PIKA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/c11e9a33b_Pika_Style_Clip.mp4";
-const HAILUO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/470e4afe1_Hailuo_Style_Clip.mp4";
-const LUMA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/51213bd75_Luma_Dream_Clip.mp4";
-const HUNYUAN_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/dc5094f40_Hunyuan_Style_Clip.mp4";
+const SORA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/d22a76a5e_Sora_Natural_Clip.mp4";
+const RUNWAY_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/c5c2711f7_Runway_Natural_Clip.mp4";
+const PIKA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/88072619d_Pika_Natural_Clip.mp4";
+const HAILUO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/83fc299f4_Hailuo_Natural_Clip.mp4";
+const LUMA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/730a1fc10_Luma_Natural_Clip.mp4";
+const HUNYUAN_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/c48c09c2e_Hunyuan_Natural_Clip.mp4";
 
 const PHASES = [
   {
@@ -149,18 +149,44 @@ const PHASES = [
     sub: "Every top model. One canvas.",
     body: "Drop a 4K asset onto the Orb and let it refract through every frontier model at once.",
     cta: "Open the Studio",
-    media: { type: "video", src: STUDIO_VIDEO, poster: STUDIO_IMG },
+    media: { type: "image", src: STUDIO_IMG },
   },
 ];
 
+const LIQUID_PHASE = {
+  key: "liquid",
+  eyebrow: "THE KAIZORA ORB",
+  title: "Liquid\nintelligence",
+  accent: "at rest",
+  sub: "Mercury, refracting.",
+  body: "The Orb breathes between every transmission from the models.",
+  cta: "Continue",
+  duration: 3200,
+  media: { type: "video", src: ORB_VIDEO, poster: ORB_IMG },
+};
+
+const CHARACTER_KEYS = new Set([
+  "kling", "seedance", "veo", "sora", "runway",
+  "pika", "hailuo", "luma", "hunyuan", "pulse-model",
+]);
+
+const SEQUENCE = PHASES.flatMap((p, i) =>
+  i < PHASES.length - 1 ? [p, LIQUID_PHASE] : [p]
+);
+
 export default function OrbitalHero() {
   const [index, setIndex] = useState(0);
-  const phase = PHASES[index];
+  const phase = SEQUENCE[index];
 
   useEffect(() => {
-    const t = setInterval(() => setIndex((i) => (i + 1) % PHASES.length), 6000);
-    return () => clearInterval(t);
-  }, []);
+    const t = setTimeout(
+      () => setIndex((i) => (i + 1) % SEQUENCE.length),
+      phase.duration || 6000
+    );
+    return () => clearTimeout(t);
+  }, [index]);
+
+  const contain = CHARACTER_KEYS.has(phase.key);
 
   return (
     <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-28">
@@ -200,7 +226,7 @@ export default function OrbitalHero() {
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover object-center"
+                    className={`w-full h-full ${contain ? "object-contain" : "object-cover"} object-center`}
                   />
                 ) : (
                   <Image src={phase.media.src} alt="Kaizora Orb" fittingType="fill" className="w-full h-full" />
@@ -214,17 +240,20 @@ export default function OrbitalHero() {
 
           {/* Phase dots */}
           <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-2">
-            {PHASES.map((p, i) => (
-              <button
-                key={p.key}
-                onClick={() => setIndex(i)}
-                className="group relative h-2 transition-all"
-                style={{ width: i === index ? 32 : 8 }}
-                aria-label={p.key}
-              >
-                <span className={`absolute inset-0 rounded-full ${i === index ? "bg-cyan-400" : "bg-white/25"}`} />
-              </button>
-            ))}
+            {PHASES.map((p, i) => {
+              const target = i * 2;
+              return (
+                <button
+                  key={p.key}
+                  onClick={() => setIndex(target)}
+                  className="group relative h-2 transition-all"
+                  style={{ width: index === target ? 32 : 8 }}
+                  aria-label={p.key}
+                >
+                  <span className={`absolute inset-0 rounded-full ${index === target ? "bg-cyan-400" : "bg-white/25"}`} />
+                </button>
+              );
+            })}
           </div>
         </div>
 
