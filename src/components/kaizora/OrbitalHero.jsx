@@ -175,7 +175,7 @@ const PHASES = [
   },
 ];
 
-const LIQUID_PHASE = {
+const LIQUID_BASE = {
   key: "liquid",
   eyebrow: "THE KAIZORA ORB",
   title: "Liquid\nintelligence",
@@ -187,8 +187,13 @@ const LIQUID_PHASE = {
   media: { type: "video", src: ORB_VIDEO, poster: ORB_IMG },
 };
 
+const LIQUID_VARIANTS = [
+  { ...LIQUID_BASE, overlay: "recycle" },
+  { ...LIQUID_BASE, overlay: "agentic" },
+];
+
 const SEQUENCE = PHASES.flatMap((p, i) =>
-  i < PHASES.length - 1 ? [p, LIQUID_PHASE] : [p]
+  i < PHASES.length - 1 ? [p, LIQUID_VARIANTS[i % LIQUID_VARIANTS.length]] : [p]
 );
 
 export default function OrbitalHero() {
@@ -240,11 +245,20 @@ export default function OrbitalHero() {
                   <Image src={phase.media.src} alt="Kaizora Screen" fittingType="fill" className="w-full h-full" />
                 )}
                 {phase.key === "liquid" && (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 text-center px-4">
-                    <span className="text-[#ff3344] font-display font-bold text-3xl sm:text-4xl tracking-tight" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>Recycle.</span>
-                    <span className="text-[#ff3344] font-display font-bold text-3xl sm:text-4xl tracking-tight" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>Remix.</span>
-                    <span className="text-[#ff3344] font-display font-bold text-3xl sm:text-4xl tracking-tight" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>Resell.</span>
-                    <span className="mt-3 text-[#ff3344]/85 text-[11px] tracking-[0.3em] uppercase" style={{ textShadow: "0 2px 12px rgba(0,0,0,0.7)" }}>AI Generated Content</span>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-center px-4">
+                    {phase.overlay === "agentic" ? (
+                      <>
+                        <span className="text-[#ff3344] font-display font-bold text-4xl sm:text-5xl tracking-tight" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>Agentic</span>
+                        <span className="text-[#ff3344] font-display font-bold text-4xl sm:text-5xl tracking-tight" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>Marketplace</span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="text-[#ff3344] font-display font-bold text-3xl sm:text-4xl tracking-tight" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>Recycle.</span>
+                        <span className="text-[#ff3344] font-display font-bold text-3xl sm:text-4xl tracking-tight" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>Remix.</span>
+                        <span className="text-[#ff3344] font-display font-bold text-3xl sm:text-4xl tracking-tight" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>Resell.</span>
+                        <span className="mt-3 text-[#ff3344]/85 text-[11px] tracking-[0.3em] uppercase" style={{ textShadow: "0 2px 12px rgba(0,0,0,0.7)" }}>AI Generated Content</span>
+                      </>
+                    )}
                   </div>
                 )}
               </motion.div>
