@@ -11,14 +11,16 @@ const STUDIO_IMG = "https://media.base44.com/images/public/6a6984ae3df2ae3b9c071
 const STUDIO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/5f2bb4cc1_ScreenRecording2026-07-29at121128AM.mov";
 
 const KLING_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/321c6a8a4_Kling_Style_Clip.mp4";
-const LADY_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/6d9244d93_Lady_Black_Dress_Clip.mp4";
 const VEO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/485cff1f7_Veo_Style_Clip.mp4";
-const SORA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/3cc6c27a5_Sora_Kata_V2.mp4";
 const RUNWAY_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/887ea9086_Runway_City_V2.mp4";
-const PIKA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/37c7c9795_Pika_Drummer_V2.mp4";
 const HAILUO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/adc06f75d_Hailuo_Skate_V2.mp4";
 const LUMA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/ce48197e7_Luma_Chef_V2.mp4";
-const HUNYUAN_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/43cb146ed_Hunyuan_Dunk_V2.mp4";
+const SPACE_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/87257326f_Spacewalk_Clip.mp4";
+const ROCKET_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/6318c604f_Rocket_Launch_Clip.mp4";
+const ROBOT_SOLDIER_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/9ae192b0e_Robot_Soldiers_Clip.mp4";
+const TIKTOK_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/e3473939d_TikTok_Dance_Clip.mp4";
+const ROBOT_YOUTUBER_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/c73e2de86_Robot_YouTuber_Clip.mp4";
+const NEON_CITY_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/a0ef1f6e8_Neon_City_Flythrough_Clip.mp4";
 
 const PHASES = [
   {
@@ -42,16 +44,6 @@ const PHASES = [
     media: { type: "video", src: KLING_VIDEO },
   },
   {
-    key: "lady",
-    eyebrow: "FRONTIER MODEL · 4K",
-    title: "Walking away\ninto the dark",
-    accent: "in a black dress",
-    sub: "Follow camera · natural stride",
-    body: "A woman in a flowing black dress walks away from the camera — the camera follows with perfect, natural motion.",
-    cta: "Watch the Walk",
-    media: { type: "video", src: LADY_VIDEO },
-  },
-  {
     key: "veo",
     eyebrow: "VEO · 4K SLOW MOTION",
     title: "Liquid metal,\nin motion",
@@ -62,16 +54,6 @@ const PHASES = [
     media: { type: "video", src: VEO_VIDEO },
   },
   {
-    key: "sora",
-    eyebrow: "SORA · 4K",
-    title: "A fluid\nkata sequence",
-    accent: "by Sora",
-    sub: "Orbit camera · full-body motion",
-    body: "A martial artist moves through a precise form — the camera orbits with perfect continuity.",
-    cta: "Watch the Form",
-    media: { type: "video", src: SORA_VIDEO },
-  },
-  {
     key: "runway",
     eyebrow: "RUNWAY GEN-3 · 4K",
     title: "Walking the\ncity night",
@@ -80,16 +62,6 @@ const PHASES = [
     body: "A figure in a tailored suit moves through neon streets — the camera tracks with flawless motion.",
     cta: "See the Walk",
     media: { type: "video", src: RUNWAY_VIDEO },
-  },
-  {
-    key: "pika",
-    eyebrow: "PIKA · 4K",
-    title: "Sticks in\nrhythm",
-    accent: "by Pika",
-    sub: "Locked camera · dynamic action",
-    body: "A drummer lands every beat — natural motion captured with perfect energy and consistency.",
-    cta: "Feel the Rhythm",
-    media: { type: "video", src: PIKA_VIDEO },
   },
   {
     key: "hailuo",
@@ -112,14 +84,64 @@ const PHASES = [
     media: { type: "video", src: LUMA_VIDEO },
   },
   {
-    key: "hunyuan",
-    eyebrow: "HUNYUAN · 4K",
-    title: "Rise to\nthe rim",
-    accent: "by Hunyuan",
-    sub: "Crane camera · slow motion",
-    body: "A player drives to the hoop — the camera rises with the motion in perfect slow-motion.",
-    cta: "Watch the Rise",
-    media: { type: "video", src: HUNYUAN_VIDEO },
+    key: "space",
+    eyebrow: "REALISTIC · 4K SPACE",
+    title: "Drifting\nabove Earth",
+    accent: "in orbit",
+    sub: "Weightless slow-motion · ultra-real",
+    body: "An astronaut floats outside the station while Earth glows below — the kind of shot that breaks the feed.",
+    cta: "Watch the Drift",
+    media: { type: "video", src: SPACE_VIDEO },
+  },
+  {
+    key: "rocket",
+    eyebrow: "TRENDING · 4K LAUNCH",
+    title: "Liftoff\nat golden hour",
+    accent: "full thrust",
+    sub: "Slow-motion ascent · billowing smoke",
+    body: "A rocket ignites and rises through the clouds — every frame engineered for maximum shareability.",
+    cta: "Feel the Thrust",
+    media: { type: "video", src: ROCKET_VIDEO },
+  },
+  {
+    key: "robot-soldiers",
+    eyebrow: "VIRAL · 4K SCI-FI",
+    title: "Robots\nin formation",
+    accent: "marching in",
+    sub: "Glowing visors · cinematic haze",
+    body: "A squad of robot soldiers advances toward the lens — the sci-fi shot everyone's been recreating.",
+    cta: "Watch the March",
+    media: { type: "video", src: ROBOT_SOLDIER_VIDEO },
+  },
+  {
+    key: "tiktok",
+    eyebrow: "TRENDING · 4K DANCE",
+    title: "The viral\ndance, nailed",
+    accent: "silly & fun",
+    sub: "Locked camera · full-body energy",
+    body: "A creator hits the trending dance — the kind of clip that racks up millions overnight.",
+    cta: "Join the Trend",
+    media: { type: "video", src: TIKTOK_VIDEO },
+  },
+  {
+    key: "robot-youtuber",
+    eyebrow: "TRENDING · 4K CREATOR",
+    title: "A robot\nrunning the channel",
+    accent: "now streaming",
+    sub: "Ring light · talking to camera",
+    body: "A humanoid robot content creator films its own show — the AI-influencer format taking over feeds.",
+    cta: "Tune In",
+    media: { type: "video", src: ROBOT_YOUTUBER_VIDEO },
+  },
+  {
+    key: "neon-city",
+    eyebrow: "VIRAL · 4K FLYTHROUGH",
+    title: "Through the\nneon city",
+    accent: "at full speed",
+    sub: "FPV drone · holographic skyline",
+    body: "A screaming FPV flythrough of a futuristic skyline — the cinematic loop that lives on every explore page.",
+    cta: "Take the Ride",
+    media: { type: "video", src: NEON_CITY_VIDEO },
   },
   {
     key: "pulse-model",
