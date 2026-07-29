@@ -192,7 +192,7 @@ export default function OrbitalHero() {
 
       {/* Screen */}
       <div className="relative z-10 flex flex-col items-center px-6">
-        <div className="relative w-[min(94vw,1040px)] aspect-video">
+        <div className="relative w-[min(90vw,540px)] aspect-[9/16]">
           {/* Rotating conic frame */}
           <motion.div
             animate={{ rotate: 360 }}
