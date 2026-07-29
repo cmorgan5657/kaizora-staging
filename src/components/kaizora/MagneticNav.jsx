@@ -33,7 +33,7 @@ function MagneticLink({ item }) {
       onMouseLeave={() => setPos({ x: 0, y: 0 })}
       animate={{ x: pos.x, y: pos.y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.6 }}
-      className="relative text-[13px] font-medium tracking-wide text-zinc-300 hover:text-white transition-colors px-2 py-2"
+      className="relative text-[11px] font-medium tracking-wide text-zinc-300 hover:text-white transition-colors px-1.5 py-2"
     >
       {item.label}
     </motion.a>
