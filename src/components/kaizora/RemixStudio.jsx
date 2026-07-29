@@ -5,11 +5,11 @@ import { Image } from "@/components/ui/image";
 const STUDIO_IMG = "https://media.base44.com/images/public/6a6984ae3df2ae3b9c071a1c/f2cd5c785_generated_049d3fdd.png";
 
 const MODELS = [
-  { name: "Sora", color: "#0056D2", desc: "Cinematic motion" },
-  { name: "Midjourney", color: "#0D172A", desc: "Painterly worlds" },
-  { name: "Veo", color: "#2563EB", desc: "Hyperreal video" },
-  { name: "DALL·E", color: "#1D4ED8", desc: "Compositional control" },
-  { name: "Flux", color: "#1E3A8A", desc: "Detail at scale" },
+  { name: "Sora", color: "#00F0FF", desc: "Cinematic motion" },
+  { name: "Midjourney", color: "#FF00E5", desc: "Painterly worlds" },
+  { name: "Veo", color: "#7C3AED", desc: "Hyperreal video" },
+  { name: "DALL·E", color: "#22D3EE", desc: "Compositional control" },
+  { name: "Flux", color: "#F472B6", desc: "Detail at scale" },
 ];
 
 export default function RemixStudio() {
@@ -20,13 +20,13 @@ export default function RemixStudio() {
     <section id="studio" className="relative py-32 px-6">
       <div className="mx-auto max-w-[1400px]">
         <div className="flex flex-col items-center text-center mb-16">
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-[11px] tracking-[0.35em] text-[#0056D2] uppercase mb-4">
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-[11px] tracking-[0.35em] text-cyan-300/80 uppercase mb-4">
             The Alchemist Studio
           </motion.p>
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-[-0.03em] text-[#0D172A] max-w-3xl">
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-[-0.03em] text-white max-w-3xl">
             One canvas. <span className="text-gradient-cyan">Every frontier model.</span>
           </motion.h2>
-          <p className="mt-5 text-[#475569] max-w-xl">Drop a 4K asset onto the Orb. It refracts through every model, glowing with each one's color signature.</p>
+          <p className="mt-5 text-zinc-400 max-w-xl">Drop a 4K asset onto the Orb. It refracts through every model, glowing with each one's color signature.</p>
         </div>
 
         <div className="relative rounded-[2rem] overflow-hidden glass-strong p-6 sm:p-10">
@@ -56,14 +56,14 @@ export default function RemixStudio() {
                 <button
                   key={m.name}
                   onClick={() => setActive(i)}
-                  className={`relative rounded-full px-5 py-2.5 text-sm font-medium transition-all ${i === active ? "text-white" : "glass text-[#475569] hover:text-[#0D172A]"}`}
+                  className={`relative rounded-full px-5 py-2.5 text-sm font-medium transition-all ${i === active ? "text-black" : "glass text-zinc-300 hover:text-white"}`}
                   style={i === active ? { background: m.color } : {}}
                 >
                   {m.name}
                 </button>
               ))}
             </div>
-            <p className="mt-4 text-sm text-[#475569]">{model.desc}</p>
+            <p className="mt-4 text-sm text-zinc-400">{model.desc}</p>
           </div>
 
           {/* Drop zone hint */}
@@ -71,7 +71,7 @@ export default function RemixStudio() {
             {["Drop 4K asset", "Select models", "Remix & resell"].map((step, i) => (
               <div key={step} className="glass rounded-2xl p-5 flex items-center gap-4">
                 <div className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm" style={{ background: `${model.color}22`, color: model.color }}>{i + 1}</div>
-                <span className="text-sm text-[#0D172A]">{step}</span>
+                <span className="text-sm text-zinc-200">{step}</span>
               </div>
             ))}
           </div>

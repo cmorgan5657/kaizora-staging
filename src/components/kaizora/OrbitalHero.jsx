@@ -186,19 +186,19 @@ export default function OrbitalHero() {
       {/* Ambient background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] rounded-full opacity-40"
-          style={{ background: "radial-gradient(circle, rgba(0,86,210,0.10) 0%, rgba(13,23,42,0.05) 40%, transparent 70%)" }} />
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, transparent 0%, #FBFBFB 75%)" }} />
+          style={{ background: "radial-gradient(circle, rgba(0,240,255,0.12) 0%, rgba(255,0,229,0.06) 40%, transparent 70%)" }} />
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, transparent 0%, #050505 75%)" }} />
       </div>
 
-      {/* Orb */}
+      {/* Screen */}
       <div className="relative z-10 flex flex-col items-center px-6">
-        <div className="relative w-[min(90vw,540px)] aspect-[9/16]">
+        <div className="relative w-[min(94vw,1040px)] aspect-video">
           {/* Rotating conic frame */}
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-            className="absolute -inset-3 rounded-[2rem] opacity-60"
-            style={{ background: "conic-gradient(from 0deg, transparent, rgba(0,86,210,0.4), transparent, rgba(0,86,210,0.2), transparent)" }}
+            className="absolute -inset-4 rounded-[2rem] opacity-60"
+            style={{ background: "conic-gradient(from 0deg, transparent, rgba(0,240,255,0.4), transparent, rgba(255,0,229,0.4), transparent)" }}
           />
           {/* Screen media */}
           <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden orb-glow glass-strong">
@@ -228,11 +228,11 @@ export default function OrbitalHero() {
             </AnimatePresence>
             {/* Refraction overlay */}
             <div className="absolute inset-0 rounded-[1.5rem] pointer-events-none"
-              style={{ background: "radial-gradient(circle at 35% 30%, rgba(255,255,255,0.5), transparent 40%), radial-gradient(circle at 70% 75%, rgba(0,86,210,0.12), transparent 50%)" }} />
+              style={{ background: "radial-gradient(circle at 35% 30%, rgba(255,255,255,0.18), transparent 40%), radial-gradient(circle at 70% 75%, rgba(0,240,255,0.16), transparent 50%)" }} />
           </div>
 
           {/* Phase dots */}
-          <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-2">
+          <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-2">
             {PHASES.map((p, i) => {
               const target = i * 2;
               return (
@@ -243,7 +243,7 @@ export default function OrbitalHero() {
                   style={{ width: index === target ? 32 : 8 }}
                   aria-label={p.key}
                 >
-                  <span className={`absolute inset-0 rounded-full ${index === target ? "bg-[#0056D2]" : "bg-[#0D172A]/20"}`} />
+                  <span className={`absolute inset-0 rounded-full ${index === target ? "bg-cyan-400" : "bg-white/25"}`} />
                 </button>
               );
             })}
@@ -260,18 +260,18 @@ export default function OrbitalHero() {
               exit={{ opacity: 0, y: -24 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              <p className="text-[11px] sm:text-xs tracking-[0.35em] text-[#0056D2] mb-5 uppercase">{phase.eyebrow}</p>
-              <h1 className="font-display font-bold leading-[1.02] tracking-[-0.04em] text-4xl sm:text-6xl lg:text-7xl text-[#0D172A] whitespace-pre-line">
+              <p className="text-[11px] sm:text-xs tracking-[0.35em] text-cyan-300/80 mb-5 uppercase">{phase.eyebrow}</p>
+              <h1 className="font-display font-bold leading-[1.02] tracking-[-0.04em] text-4xl sm:text-6xl lg:text-7xl text-white whitespace-pre-line">
                 {phase.title}{" "}
                 <span className="text-gradient-cyan">{phase.accent}</span>
               </h1>
-              <p className="mt-6 text-lg font-semibold text-[#0056D2]">{phase.sub}</p>
-              <p className="mt-2 text-base text-[#475569]">{phase.body}</p>
-              <button className="mt-9 inline-flex items-center gap-2 rounded-full px-8 py-4 bg-[#0D172A] text-white font-semibold text-sm hover:opacity-90 transition group">
+              <p className="mt-6 text-lg font-semibold text-fuchsia-400">{phase.sub}</p>
+              <p className="mt-2 text-base text-zinc-300">{phase.body}</p>
+              <button className="mt-9 inline-flex items-center gap-2 rounded-full px-8 py-4 bg-white text-black font-semibold text-sm hover:bg-zinc-200 transition group">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.5 6.5L20 10l-6.5 1.5L12 18l-1.5-6.5L4 10l6.5-1.5z"/></svg>
                 {phase.cta}
               </button>
-              <p className="mt-6 text-xs tracking-widest text-[#94A3B8] uppercase">For visionary creators worldwide</p>
+              <p className="mt-6 text-xs tracking-widest text-zinc-500 uppercase">For visionary creators worldwide</p>
             </motion.div>
           </AnimatePresence>
         </div>
@@ -281,7 +281,7 @@ export default function OrbitalHero() {
         href="#agents"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#94A3B8] text-xs tracking-[0.2em] uppercase flex flex-col items-center gap-1"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-zinc-500 text-xs tracking-[0.2em] uppercase flex flex-col items-center gap-1"
       >
         <span>↓ Discover the rebirth ↓</span>
       </motion.a>
