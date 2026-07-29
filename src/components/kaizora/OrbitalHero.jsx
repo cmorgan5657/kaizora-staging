@@ -197,7 +197,7 @@ export default function OrbitalHero() {
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] rounded-full opacity-40"
           style={{ background: "radial-gradient(circle, rgba(255,51,68,0.12) 0%, rgba(255,85,119,0.06) 40%, transparent 70%)" }} />
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, transparent 0%, #050505 75%)" }} />
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, transparent 0%, #101012 75%)" }} />
       </div>
 
       {/* Screen */}
