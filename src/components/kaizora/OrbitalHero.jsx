@@ -86,7 +86,7 @@ export default function OrbitalHero() {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-28">
       {/* Ambient background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] rounded-full opacity-40"
@@ -96,7 +96,7 @@ export default function OrbitalHero() {
 
       {/* Orb */}
       <div className="relative z-10 flex flex-col items-center px-6">
-        <div className="relative w-[min(78vw,460px)] h-[min(78vw,460px)] sm:w-[420px] sm:h-[420px]">
+        <div className="relative w-[min(94vw,552px)] h-[min(94vw,552px)] sm:w-[504px] sm:h-[504px]">
           {/* Rotating conic ring */}
           <motion.div
             animate={{ rotate: 360 }}
