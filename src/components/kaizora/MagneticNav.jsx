@@ -4,12 +4,13 @@ import { Bell, Coins, User } from "lucide-react";
 
 const NAV_ITEMS = [
   { label: "Marketplace", href: "#hero" },
+  { label: "Value", href: "#value" },
   { label: "My Assets", href: "#browse" },
-  { label: "Pulse", href: "#decision" },
+  { label: "Creators", href: "#audience" },
   { label: "Decision Layer", href: "#decision" },
-  { label: "Pricing", href: "#footer" },
-  { label: "Dashboard", href: "#how" },
+  { label: "How It Works", href: "#how" },
   { label: "Remix Studio", href: "#drops" },
+  { label: "Pricing", href: "#footer" },
 ];
 
 function MagneticLink({ item }) {

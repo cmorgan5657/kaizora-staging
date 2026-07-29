@@ -58,7 +58,7 @@ function Panel({ icon: Icon, title, accent, sub, features, cta, ctaStyle }) {
 
 export default function AudienceSplit() {
   return (
-    <section className="relative py-28 px-6">
+    <section id="audience" className="relative py-28 px-6">
       <div className="mx-auto max-w-[1200px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <Panel

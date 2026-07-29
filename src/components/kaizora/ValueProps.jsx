@@ -22,7 +22,7 @@ const CARDS = [
 
 export default function ValueProps() {
   return (
-    <section className="relative py-28 px-6">
+    <section id="value" className="relative py-28 px-6">
       <div className="mx-auto max-w-[1200px]">
         <div className="flex flex-col items-center text-center mb-16">
           <motion.h2
