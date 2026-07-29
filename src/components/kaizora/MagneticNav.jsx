@@ -1,17 +1,15 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Bell, Coins, User } from "lucide-react";
 import MusicControl from "@/components/kaizora/MusicControl";
 
 const NAV_ITEMS = [
   { label: "Marketplace", href: "#hero" },
-  { label: "Value", href: "#value" },
   { label: "My Assets", href: "#browse" },
-  { label: "Creators", href: "#audience" },
+  { label: "Pulse", href: "#value" },
   { label: "Decision Layer", href: "#decision" },
-  { label: "How It Works", href: "#how" },
-  { label: "Remix Studio", href: "#drops" },
   { label: "Pricing", href: "#footer" },
+  { label: "Dashboard", href: "#how" },
+  { label: "Remix Studio", href: "#drops" },
 ];
 
 function MagneticLink({ item }) {
@@ -35,7 +33,7 @@ function MagneticLink({ item }) {
       onMouseLeave={() => setPos({ x: 0, y: 0 })}
       animate={{ x: pos.x, y: pos.y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.6 }}
-      className="relative text-sm font-medium tracking-wide text-zinc-400 hover:text-white transition-colors px-3 py-2"
+      className="relative text-sm font-medium tracking-wide text-zinc-300 hover:text-white transition-colors px-3 py-2"
     >
       {item.label}
     </motion.a>
@@ -49,49 +47,38 @@ export default function MagneticNav() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="fixed top-0 inset-x-0 z-50"
+      className="fixed top-0 inset-x-0 z-50 bg-black border-b border-white/5"
     >
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-5 flex items-center justify-between">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-4 flex items-center justify-between">
         <a href="#hero" className="flex items-center gap-2 group">
-          <div className="relative w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#ff3344] to-[#ff5577]">
+          <div className="relative w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#D90429] to-[#ff3344]">
             <span className="relative text-white font-bold text-lg">K</span>
           </div>
-          <span className="text-white font-semibold tracking-[0.2em] text-sm">KAIZORA</span>
+          <span className="text-[#D90429] font-bold tracking-[0.2em] text-sm">KAIZORA</span>
         </a>
 
-        <nav className="hidden lg:flex items-center gap-1 glass rounded-full px-3 py-1.5">
+        <nav className="hidden lg:flex items-center gap-1">
           {NAV_ITEMS.map((item) => (
             <MagneticLink key={item.label} item={item} />
           ))}
         </nav>
 
         <div className="flex items-center gap-3">
-          <div className="hidden sm:flex items-center gap-1.5 rounded-full border border-[#ff3344]/40 px-3 py-1.5">
-            <Coins className="w-4 h-4 text-[#ff3344]" />
-            <span className="text-white font-medium text-sm">648</span>
-            <span className="text-zinc-500 text-xs">credits</span>
-          </div>
-          <button className="hidden sm:flex glass rounded-full w-10 h-10 items-center justify-center text-zinc-300 hover:text-white transition" aria-label="Cart">
+          <MusicControl />
+          <button className="flex items-center justify-center rounded-full border border-white/15 w-10 h-10 text-white hover:bg-white/10 transition" aria-label="Cart">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
           </button>
-          <MusicControl />
-          <button className="hidden sm:flex glass rounded-full w-10 h-10 items-center justify-center text-zinc-300 hover:text-white transition" aria-label="Notifications">
-            <Bell className="w-4 h-4" />
+          <button className="rounded-full border border-white/30 px-5 py-2 text-sm text-white font-medium hover:bg-white/10 transition">
+            Sign In
           </button>
-          <button className="flex items-center gap-2 rounded-full border border-white/15 px-3 py-1.5 hover:bg-white/10 transition">
-            <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#ff3344] to-[#ff5577] flex items-center justify-center">
-              <User className="w-4 h-4 text-white" />
-            </div>
-            <span className="text-sm text-white font-medium hidden sm:inline">Testing</span>
-          </button>
-          <button onClick={() => setOpen(!open)} className="lg:hidden glass rounded-full w-10 h-10 flex items-center justify-center text-white">
+          <button onClick={() => setOpen(!open)} className="lg:hidden rounded-full border border-white/15 w-10 h-10 flex items-center justify-center text-white">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
           </button>
         </div>
       </div>
 
       {open && (
-        <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} className="lg:hidden glass-strong mx-6 rounded-2xl overflow-hidden">
+        <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} className="lg:hidden bg-black mx-6 rounded-2xl overflow-hidden border border-white/10">
           {NAV_ITEMS.map((item) => (
             <a key={item.label} href={item.href} onClick={() => setOpen(false)} className="block px-6 py-4 text-zinc-300 hover:text-white border-b border-white/5 last:border-0">
               {item.label}
