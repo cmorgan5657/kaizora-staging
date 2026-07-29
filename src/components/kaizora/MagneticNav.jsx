@@ -33,7 +33,7 @@ function MagneticLink({ item }) {
       onMouseLeave={() => setPos({ x: 0, y: 0 })}
       animate={{ x: pos.x, y: pos.y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.6 }}
-      className="relative text-[9px] font-semibold tracking-wide text-zinc-300 hover:text-white transition-colors rounded-full border border-[#ff3344] h-7 px-3.5 flex items-center hover:border-[#D90429] hover:bg-[#D90429]/10"
+      className="relative text-[9px] font-semibold tracking-wide text-zinc-300 hover:text-white transition-all duration-300 rounded-full border border-[#ff3344] h-7 px-3.5 flex items-center hover:border-[#D90429] hover:bg-[#D90429]/10 hover:shadow-[0_0_14px_rgba(217,4,41,0.7),0_0_28px_rgba(217,4,41,0.35)]"
     >
       {item.label}
     </motion.a>
@@ -68,7 +68,7 @@ export default function MagneticNav() {
           <button className="flex items-center justify-center rounded-full border border-white/15 w-10 h-10 text-white hover:bg-white/10 transition" aria-label="Cart">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
           </button>
-          <button className="rounded-full border border-[#ff3344] h-7 px-3.5 flex items-center text-[9px] font-semibold tracking-wide text-zinc-300 hover:text-white hover:border-[#D90429] hover:bg-[#D90429]/10 transition">
+          <button className="rounded-full border border-[#ff3344] h-7 px-3.5 flex items-center text-[9px] font-semibold tracking-wide text-zinc-300 hover:text-white hover:border-[#D90429] hover:bg-[#D90429]/10 hover:shadow-[0_0_14px_rgba(217,4,41,0.7),0_0_28px_rgba(217,4,41,0.35)] transition-all duration-300">
             Sign In
           </button>
           <button onClick={() => setOpen(!open)} className="md:hidden rounded-full border border-white/15 w-10 h-10 flex items-center justify-center text-white">
