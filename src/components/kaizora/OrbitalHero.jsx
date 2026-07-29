@@ -5,13 +5,20 @@ import { Image } from "@/components/ui/image";
 const ORB_IMG = "https://media.base44.com/images/public/6a6984ae3df2ae3b9c071a1c/00ac9dd39_generated_image.png";
 const ORB_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/e62a7b4ba_Liquid_Orb.mp4";
 const DECISION_IMG = "https://media.base44.com/images/public/6a6984ae3df2ae3b9c071a1c/9ded05d0d_generated_5149b298.png";
-const DECISION_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/9c986880f_Decision_Layer_Video.mp4";
+const DECISION_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/5e60bfb65_ScreenRecording2026-07-29at120131AM.mov";
 const PULSE_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/d9dfdfc32_Pulse_Model_Video.mp4";
 const STUDIO_IMG = "https://media.base44.com/images/public/6a6984ae3df2ae3b9c071a1c/f2cd5c785_generated_049d3fdd.png";
+const STUDIO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/5f2bb4cc1_ScreenRecording2026-07-29at121128AM.mov";
 
 const KLING_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/321c6a8a4_Kling_Style_Clip.mp4";
 const SEEDANCE_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/a7979bf9e_Seedance_20_Clip.mp4";
 const VEO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/485cff1f7_Veo_Style_Clip.mp4";
+const SORA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/b25a151c7_Sora_Style_Clip.mp4";
+const RUNWAY_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/f20a1b0da_Runway_Gen-3_Clip.mp4";
+const PIKA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/c11e9a33b_Pika_Style_Clip.mp4";
+const HAILUO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/470e4afe1_Hailuo_Style_Clip.mp4";
+const LUMA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/51213bd75_Luma_Dream_Clip.mp4";
+const HUNYUAN_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/dc5094f40_Hunyuan_Style_Clip.mp4";
 
 const PHASES = [
   {
@@ -55,6 +62,76 @@ const PHASES = [
     media: { type: "video", src: VEO_VIDEO },
   },
   {
+    key: "sora",
+    eyebrow: "SORA · 4K",
+    title: "A single spin,\ncentered",
+    accent: "by Sora",
+    sub: "Locked camera · elegant motion",
+    body: "One dancer, one turn — perfect character consistency across every frame.",
+    cta: "Watch the Spin",
+    media: { type: "video", src: SORA_VIDEO },
+  },
+  {
+    key: "runway",
+    eyebrow: "RUNWAY GEN-3 · 4K",
+    title: "Walking\ntoward you",
+    accent: "by Runway",
+    sub: "Dolly-in · centered subject",
+    body: "Smooth approach with the character locked dead-center in the frame.",
+    cta: "See the Walk",
+    media: { type: "video", src: RUNWAY_VIDEO },
+  },
+  {
+    key: "pika",
+    eyebrow: "PIKA · 4K PORTRAIT",
+    title: "A slow\nturn of the head",
+    accent: "by Pika",
+    sub: "Locked camera · facial consistency",
+    body: "The subtlest motion, held perfectly centered and stable.",
+    cta: "Watch the Turn",
+    media: { type: "video", src: PIKA_VIDEO },
+  },
+  {
+    key: "hailuo",
+    eyebrow: "HAILUO · 4K",
+    title: "Fabric in\nthe wind",
+    accent: "by Hailuo",
+    sub: "Slow zoom · centered figure",
+    body: "A still subject, moving cloth — cinematic slow-push composition.",
+    cta: "Feel the Wind",
+    media: { type: "video", src: HAILUO_VIDEO },
+  },
+  {
+    key: "luma",
+    eyebrow: "LUMA DREAM MACHINE · 4K",
+    title: "The scene\nrevealed",
+    accent: "by Luma",
+    sub: "Pull-back camera · centered subject",
+    body: "The camera retreats while the character holds the dead-center of the frame.",
+    cta: "See the Reveal",
+    media: { type: "video", src: LUMA_VIDEO },
+  },
+  {
+    key: "hunyuan",
+    eyebrow: "HUNYUAN · 4K",
+    title: "Hair in\nthe wind",
+    accent: "by Hunyuan",
+    sub: "Locked camera · character consistency",
+    body: "Golden light meets cyan rim — every strand rendered with perfect continuity.",
+    cta: "Watch the Motion",
+    media: { type: "video", src: HUNYUAN_VIDEO },
+  },
+  {
+    key: "pulse-model",
+    eyebrow: "PULSE · 4K PORTRAIT",
+    title: "Hyper-real\nskin & light",
+    accent: "by Pulse",
+    sub: "Rim lighting · character consistency",
+    body: "Avant-garde portraiture with hyper-realistic skin textures and dramatic lighting.",
+    cta: "See the Portrait",
+    media: { type: "video", src: PULSE_VIDEO },
+  },
+  {
     key: "decision",
     eyebrow: "THE DECISION LAYER",
     title: "Agents that\nevaluate",
@@ -72,7 +149,7 @@ const PHASES = [
     sub: "Every top model. One canvas.",
     body: "Drop a 4K asset onto the Orb and let it refract through every frontier model at once.",
     cta: "Open the Studio",
-    media: { type: "image", src: STUDIO_IMG },
+    media: { type: "video", src: STUDIO_VIDEO, poster: STUDIO_IMG },
   },
 ];
 
@@ -123,7 +200,7 @@ export default function OrbitalHero() {
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center"
                   />
                 ) : (
                   <Image src={phase.media.src} alt="Kaizora Orb" fittingType="fill" className="w-full h-full" />
