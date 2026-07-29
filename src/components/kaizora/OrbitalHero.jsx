@@ -202,7 +202,7 @@ export default function OrbitalHero() {
 
       {/* Screen */}
       <div className="relative z-10 flex flex-col items-center px-6">
-        <div className="relative w-[min(67.5vw,405px)] aspect-[9/16]">
+        <div className="relative w-[min(67.5vw,405px)] aspect-square">
           {/* Screen media */}
           <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden">
             <AnimatePresence mode="wait">
