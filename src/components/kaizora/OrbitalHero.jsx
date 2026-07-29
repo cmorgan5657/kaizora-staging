@@ -153,26 +153,6 @@ const PHASES = [
     cta: "See the Portrait",
     media: { type: "video", src: PULSE_VIDEO },
   },
-  {
-    key: "decision",
-    eyebrow: "THE DECISION LAYER",
-    title: "Agents that\nevaluate",
-    accent: "and coach",
-    sub: "Real-time intelligence, not just scoring.",
-    body: "A crystalline neural core reads every asset and guides each creator toward mastery.",
-    cta: "Enter the Layer",
-    media: { type: "video", src: DECISION_VIDEO, poster: DECISION_IMG },
-  },
-  {
-    key: "studio",
-    eyebrow: "THE REMIX STUDIO",
-    title: "Remix the\nuniverse",
-    accent: "of models",
-    sub: "Every top model. One canvas.",
-    body: "Drop a 4K asset onto the Orb and let it refract through every frontier model at once.",
-    cta: "Open the Studio",
-    media: { type: "video", src: STUDIO_VIDEO, poster: STUDIO_IMG },
-  },
 ];
 
 const LIQUID_BASE = {
