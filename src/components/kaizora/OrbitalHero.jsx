@@ -13,12 +13,12 @@ const STUDIO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c0
 const KLING_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/321c6a8a4_Kling_Style_Clip.mp4";
 const LADY_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/6d9244d93_Lady_Black_Dress_Clip.mp4";
 const VEO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/485cff1f7_Veo_Style_Clip.mp4";
-const SORA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/67faa6e08_Sora_Kata_Clip.mp4";
-const RUNWAY_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/2daec1023_Runway_City_Clip.mp4";
-const PIKA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/6481e9b14_Pika_Drummer_Clip.mp4";
-const HAILUO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/a5d852302_Hailuo_Skate_Clip.mp4";
-const LUMA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/3071a5b88_Luma_Chef_Clip.mp4";
-const HUNYUAN_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/01d11437e_Hunyuan_Dunk_Clip.mp4";
+const SORA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/3cc6c27a5_Sora_Kata_V2.mp4";
+const RUNWAY_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/887ea9086_Runway_City_V2.mp4";
+const PIKA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/37c7c9795_Pika_Drummer_V2.mp4";
+const HAILUO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/adc06f75d_Hailuo_Skate_V2.mp4";
+const LUMA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/ce48197e7_Luma_Chef_V2.mp4";
+const HUNYUAN_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/43cb146ed_Hunyuan_Dunk_V2.mp4";
 
 const PHASES = [
   {
@@ -186,28 +186,28 @@ export default function OrbitalHero() {
       {/* Ambient background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] rounded-full opacity-40"
-          style={{ background: "radial-gradient(circle, rgba(0,240,255,0.12) 0%, rgba(255,0,229,0.06) 40%, transparent 70%)" }} />
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, transparent 0%, #050505 75%)" }} />
+          style={{ background: "radial-gradient(circle, rgba(0,86,210,0.10) 0%, rgba(13,23,42,0.05) 40%, transparent 70%)" }} />
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, transparent 0%, #FBFBFB 75%)" }} />
       </div>
 
       {/* Orb */}
       <div className="relative z-10 flex flex-col items-center px-6">
-        <div className="relative w-[min(94vw,552px)] h-[min(94vw,552px)] sm:w-[504px] sm:h-[504px]">
-          {/* Rotating conic ring */}
+        <div className="relative w-[min(90vw,540px)] aspect-[9/16]">
+          {/* Rotating conic frame */}
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-            className="absolute -inset-6 rounded-full opacity-60"
-            style={{ background: "conic-gradient(from 0deg, transparent, rgba(0,240,255,0.4), transparent, rgba(255,0,229,0.4), transparent)" }}
+            className="absolute -inset-3 rounded-[2rem] opacity-60"
+            style={{ background: "conic-gradient(from 0deg, transparent, rgba(0,86,210,0.4), transparent, rgba(0,86,210,0.2), transparent)" }}
           />
-          {/* Orb media */}
-          <div className="relative w-full h-full rounded-full overflow-hidden orb-glow glass-strong">
+          {/* Screen media */}
+          <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden orb-glow glass-strong">
             <AnimatePresence mode="wait">
               <motion.div
                 key={phase.key}
-                initial={{ opacity: 0, scale: 1.15 }}
+                initial={{ opacity: 0, scale: 1.08 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
+                exit={{ opacity: 0, scale: 0.96 }}
                 transition={{ duration: 1.2, ease: "easeInOut" }}
                 className="absolute inset-0"
               >
@@ -222,13 +222,13 @@ export default function OrbitalHero() {
                     className="w-full h-full object-cover object-center"
                   />
                 ) : (
-                  <Image src={phase.media.src} alt="Kaizora Orb" fittingType="fill" className="w-full h-full" />
+                  <Image src={phase.media.src} alt="Kaizora Screen" fittingType="fill" className="w-full h-full" />
                 )}
               </motion.div>
             </AnimatePresence>
             {/* Refraction overlay */}
-            <div className="absolute inset-0 rounded-full pointer-events-none"
-              style={{ background: "radial-gradient(circle at 35% 30%, rgba(255,255,255,0.25), transparent 40%), radial-gradient(circle at 70% 75%, rgba(0,240,255,0.2), transparent 50%)" }} />
+            <div className="absolute inset-0 rounded-[1.5rem] pointer-events-none"
+              style={{ background: "radial-gradient(circle at 35% 30%, rgba(255,255,255,0.5), transparent 40%), radial-gradient(circle at 70% 75%, rgba(0,86,210,0.12), transparent 50%)" }} />
           </div>
 
           {/* Phase dots */}
@@ -243,7 +243,7 @@ export default function OrbitalHero() {
                   style={{ width: index === target ? 32 : 8 }}
                   aria-label={p.key}
                 >
-                  <span className={`absolute inset-0 rounded-full ${index === target ? "bg-cyan-400" : "bg-white/25"}`} />
+                  <span className={`absolute inset-0 rounded-full ${index === target ? "bg-[#0056D2]" : "bg-[#0D172A]/20"}`} />
                 </button>
               );
             })}
@@ -260,18 +260,18 @@ export default function OrbitalHero() {
               exit={{ opacity: 0, y: -24 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              <p className="text-[11px] sm:text-xs tracking-[0.35em] text-cyan-300/80 mb-5 uppercase">{phase.eyebrow}</p>
-              <h1 className="font-display font-bold leading-[1.02] tracking-[-0.04em] text-4xl sm:text-6xl lg:text-7xl text-white whitespace-pre-line">
+              <p className="text-[11px] sm:text-xs tracking-[0.35em] text-[#0056D2] mb-5 uppercase">{phase.eyebrow}</p>
+              <h1 className="font-display font-bold leading-[1.02] tracking-[-0.04em] text-4xl sm:text-6xl lg:text-7xl text-[#0D172A] whitespace-pre-line">
                 {phase.title}{" "}
                 <span className="text-gradient-cyan">{phase.accent}</span>
               </h1>
-              <p className="mt-6 text-lg font-semibold text-fuchsia-400">{phase.sub}</p>
-              <p className="mt-2 text-base text-zinc-300">{phase.body}</p>
-              <button className="mt-9 inline-flex items-center gap-2 rounded-full px-8 py-4 bg-white text-black font-semibold text-sm hover:bg-zinc-200 transition group">
+              <p className="mt-6 text-lg font-semibold text-[#0056D2]">{phase.sub}</p>
+              <p className="mt-2 text-base text-[#475569]">{phase.body}</p>
+              <button className="mt-9 inline-flex items-center gap-2 rounded-full px-8 py-4 bg-[#0D172A] text-white font-semibold text-sm hover:opacity-90 transition group">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.5 6.5L20 10l-6.5 1.5L12 18l-1.5-6.5L4 10l6.5-1.5z"/></svg>
                 {phase.cta}
               </button>
-              <p className="mt-6 text-xs tracking-widest text-zinc-500 uppercase">For visionary creators worldwide</p>
+              <p className="mt-6 text-xs tracking-widest text-[#94A3B8] uppercase">For visionary creators worldwide</p>
             </motion.div>
           </AnimatePresence>
         </div>
@@ -281,7 +281,7 @@ export default function OrbitalHero() {
         href="#agents"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-zinc-500 text-xs tracking-[0.2em] uppercase flex flex-col items-center gap-1"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#94A3B8] text-xs tracking-[0.2em] uppercase flex flex-col items-center gap-1"
       >
         <span>↓ Discover the rebirth ↓</span>
       </motion.a>
