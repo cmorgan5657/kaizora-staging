@@ -239,6 +239,14 @@ export default function OrbitalHero() {
                 ) : (
                   <Image src={phase.media.src} alt="Kaizora Screen" fittingType="fill" className="w-full h-full" />
                 )}
+                {phase.key === "liquid" && (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 text-center px-4">
+                    <span className="text-[#ff3344] font-display font-bold text-3xl sm:text-4xl tracking-tight" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>Recycle.</span>
+                    <span className="text-[#ff3344] font-display font-bold text-3xl sm:text-4xl tracking-tight" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>Remix.</span>
+                    <span className="text-[#ff3344] font-display font-bold text-3xl sm:text-4xl tracking-tight" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>Resell.</span>
+                    <span className="mt-3 text-[#ff3344]/85 text-[11px] tracking-[0.3em] uppercase" style={{ textShadow: "0 2px 12px rgba(0,0,0,0.7)" }}>AI Generated Content</span>
+                  </div>
+                )}
               </motion.div>
             </AnimatePresence>
           </div>
