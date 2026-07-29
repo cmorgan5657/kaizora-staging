@@ -11,7 +11,7 @@ const STUDIO_IMG = "https://media.base44.com/images/public/6a6984ae3df2ae3b9c071
 const STUDIO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/5f2bb4cc1_ScreenRecording2026-07-29at121128AM.mov";
 
 const KLING_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/321c6a8a4_Kling_Style_Clip.mp4";
-const SEEDANCE_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/a7979bf9e_Seedance_20_Clip.mp4";
+const LADY_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/6d9244d93_Lady_Black_Dress_Clip.mp4";
 const VEO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/485cff1f7_Veo_Style_Clip.mp4";
 const SORA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/67faa6e08_Sora_Kata_Clip.mp4";
 const RUNWAY_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/2daec1023_Runway_City_Clip.mp4";
@@ -42,14 +42,14 @@ const PHASES = [
     media: { type: "video", src: KLING_VIDEO },
   },
   {
-    key: "seedance",
-    eyebrow: "SEEDANCE 2.0 · 4K",
-    title: "One character,\n360 degrees",
-    accent: "by Seedance",
-    sub: "Orbital camera · perfect consistency",
-    body: "The camera orbits a single subject without losing a single detail of the face.",
-    cta: "See the Orbit",
-    media: { type: "video", src: SEEDANCE_VIDEO },
+    key: "lady",
+    eyebrow: "FRONTIER MODEL · 4K",
+    title: "Walking away\ninto the dark",
+    accent: "in a black dress",
+    sub: "Follow camera · natural stride",
+    body: "A woman in a flowing black dress walks away from the camera — the camera follows with perfect, natural motion.",
+    cta: "Watch the Walk",
+    media: { type: "video", src: LADY_VIDEO },
   },
   {
     key: "veo",
@@ -165,11 +165,6 @@ const LIQUID_PHASE = {
   media: { type: "video", src: ORB_VIDEO, poster: ORB_IMG },
 };
 
-const CHARACTER_KEYS = new Set([
-  "kling", "seedance", "veo", "sora", "runway",
-  "pika", "hailuo", "luma", "hunyuan", "pulse-model",
-]);
-
 const SEQUENCE = PHASES.flatMap((p, i) =>
   i < PHASES.length - 1 ? [p, LIQUID_PHASE] : [p]
 );
@@ -185,8 +180,6 @@ export default function OrbitalHero() {
     );
     return () => clearTimeout(t);
   }, [index]);
-
-  const contain = CHARACTER_KEYS.has(phase.key);
 
   return (
     <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-28">
@@ -226,7 +219,7 @@ export default function OrbitalHero() {
                     loop
                     muted
                     playsInline
-                    className={`w-full h-full ${contain ? "object-contain" : "object-cover"} object-center`}
+                    className="w-full h-full object-cover object-center"
                   />
                 ) : (
                   <Image src={phase.media.src} alt="Kaizora Orb" fittingType="fill" className="w-full h-full" />
