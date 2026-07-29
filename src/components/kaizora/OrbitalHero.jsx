@@ -190,6 +190,7 @@ const LIQUID_BASE = {
 const LIQUID_VARIANTS = [
   { ...LIQUID_BASE, overlay: "recycle" },
   { ...LIQUID_BASE, overlay: "agentic" },
+  { ...LIQUID_BASE, overlay: "studio" },
 ];
 
 const SEQUENCE = PHASES.flatMap((p, i) =>
@@ -250,6 +251,11 @@ export default function OrbitalHero() {
                       <>
                         <span className="text-[#ff3344] font-display font-bold text-4xl sm:text-5xl tracking-tight" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>Agentic</span>
                         <span className="text-[#ff3344] font-display font-bold text-4xl sm:text-5xl tracking-tight" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>Marketplace</span>
+                      </>
+                    ) : phase.overlay === "studio" ? (
+                      <>
+                        <span className="text-[#ff3344] font-display font-bold text-4xl sm:text-5xl tracking-tight" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>Remix</span>
+                        <span className="text-[#ff3344] font-display font-bold text-4xl sm:text-5xl tracking-tight" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>Studio</span>
                       </>
                     ) : (
                       <>
