@@ -34,17 +34,21 @@ export default function MusicControl() {
   };
 
   return (
-    <div className="relative flex items-center">
+    <div
+      className="relative flex items-center gap-2"
+      onMouseEnter={() => setShowVolume(true)}
+      onMouseLeave={() => setShowVolume(false)}
+    >
       <audio ref={audioRef} src={TRACK_URL} loop preload="auto" />
 
       <AnimatePresence>
         {showVolume && (
           <motion.div
-            initial={{ opacity: 0, x: 12, scale: 0.9 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            exit={{ opacity: 0, x: 12, scale: 0.9 }}
+            initial={{ opacity: 0, width: 0, scale: 0.9 }}
+            animate={{ opacity: 1, width: "auto", scale: 1 }}
+            exit={{ opacity: 0, width: 0, scale: 0.9 }}
             transition={{ duration: 0.18 }}
-            className="absolute right-12 top-1/2 -translate-y-1/2 glass-strong rounded-full px-3 py-2 flex items-center gap-2"
+            className="glass-strong rounded-full px-3 py-2 flex items-center gap-2 overflow-hidden"
           >
             <input
               type="range"
@@ -65,10 +69,8 @@ export default function MusicControl() {
 
       <button
         onClick={togglePlay}
-        onMouseEnter={() => setShowVolume(true)}
-        onMouseLeave={() => setShowVolume(false)}
         aria-label={playing ? "Mute music" : "Play music"}
-        className="glass rounded-full w-10 h-10 flex items-center justify-center text-[#ff3344] hover:text-white transition"
+        className="glass rounded-full w-10 h-10 flex items-center justify-center text-[#ff3344] hover:text-white transition shrink-0"
       >
         {playing ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
       </button>
