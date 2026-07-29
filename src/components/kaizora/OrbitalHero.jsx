@@ -202,7 +202,7 @@ export default function OrbitalHero() {
 
       {/* Screen */}
       <div className="relative z-10 flex flex-col items-center px-6">
-        <div className="relative w-[min(90vw,540px)] aspect-[9/16]">
+        <div className="relative w-[min(67.5vw,405px)] aspect-[9/16]">
           {/* Screen media */}
           <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden">
             <AnimatePresence mode="wait">
@@ -309,14 +309,6 @@ export default function OrbitalHero() {
         </div>
       </div>
 
-      <motion.a
-        href="#agents"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-zinc-500 text-xs tracking-[0.2em] uppercase flex flex-col items-center gap-1"
-      >
-        <span>↓ Discover the rebirth ↓</span>
-      </motion.a>
     </section>
   );
 }
