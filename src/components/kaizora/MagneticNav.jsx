@@ -33,7 +33,7 @@ function MagneticLink({ item }) {
       onMouseLeave={() => setPos({ x: 0, y: 0 })}
       animate={{ x: pos.x, y: pos.y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.6 }}
-      className="relative text-[11px] font-medium tracking-wide text-zinc-300 hover:text-white transition-colors px-1.5 py-2"
+      className="relative text-[11px] font-medium tracking-wide text-zinc-300 hover:text-white transition-colors rounded-full border border-white/10 px-3.5 py-2 hover:border-[#ff3344]/50 hover:bg-white/5"
     >
       {item.label}
     </motion.a>
@@ -57,7 +57,7 @@ export default function MagneticNav() {
           <span className="text-[#D90429] font-bold tracking-[0.2em] text-sm">KAIZORA</span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-0">
+        <nav className="hidden md:flex items-center gap-2.5">
           {NAV_ITEMS.map((item) => (
             <MagneticLink key={item.label} item={item} />
           ))}
