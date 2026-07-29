@@ -49,8 +49,8 @@ export default function MagneticNav() {
     >
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-5 flex items-center justify-between">
         <a href="#hero" className="flex items-center gap-2 group">
-          <div className="relative w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden bg-gradient-to-br from-cyan-400 to-fuchsia-500">
-            <span className="relative text-black font-bold text-lg">K</span>
+          <div className="relative w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#ff3344] to-[#ff5577]">
+            <span className="relative text-white font-bold text-lg">K</span>
           </div>
           <span className="text-white font-semibold tracking-[0.2em] text-sm">KAIZORA</span>
         </a>
@@ -65,7 +65,7 @@ export default function MagneticNav() {
           <button className="hidden sm:flex glass rounded-full w-10 h-10 items-center justify-center text-zinc-300 hover:text-white transition">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
           </button>
-          <button className="rounded-full bg-white text-black text-sm font-semibold px-5 py-2.5 hover:bg-zinc-200 transition">
+          <button className="rounded-full border border-white/20 text-white text-sm font-semibold px-5 py-2.5 hover:bg-white/10 transition">
             Sign In
           </button>
           <button onClick={() => setOpen(!open)} className="lg:hidden glass rounded-full w-10 h-10 flex items-center justify-center text-white">

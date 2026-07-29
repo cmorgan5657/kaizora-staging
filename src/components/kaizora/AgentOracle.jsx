@@ -5,9 +5,9 @@ import { Image } from "@/components/ui/image";
 const AGENT_IMG = "https://media.base44.com/images/public/6a6984ae3df2ae3b9c071a1c/0113ef8d2_generated_ce690338.png";
 
 const AGENTS = [
-  { name: "ARIA", role: "Vision Director", specialty: "Composition & light", signature: "#00F0FF" },
-  { name: "NOVA", role: "Narrative Coach", specialty: "Story & sequence", signature: "#FF00E5" },
-  { name: "ZEN", role: "Aesthetic Judge", specialty: "Taste calibration", signature: "#7C3AED" },
+  { name: "ARIA", role: "Vision Director", specialty: "Composition & light", signature: "#ff3344" },
+  { name: "NOVA", role: "Narrative Coach", specialty: "Story & sequence", signature: "#ff5577" },
+  { name: "ZEN", role: "Aesthetic Judge", specialty: "Taste calibration", signature: "#cc2233" },
 ];
 
 export default function AgentOracle() {
@@ -17,7 +17,7 @@ export default function AgentOracle() {
         <div className="flex flex-col items-center text-center mb-16">
           <motion.p
             initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
-            className="text-[11px] tracking-[0.35em] text-cyan-300/80 uppercase mb-4"
+            className="text-[11px] tracking-[0.35em] text-zinc-400 uppercase mb-4"
           >
             The Agent Oracle
           </motion.p>

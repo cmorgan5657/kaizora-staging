@@ -5,11 +5,11 @@ import { Image } from "@/components/ui/image";
 const STUDIO_IMG = "https://media.base44.com/images/public/6a6984ae3df2ae3b9c071a1c/f2cd5c785_generated_049d3fdd.png";
 
 const MODELS = [
-  { name: "Sora", color: "#00F0FF", desc: "Cinematic motion" },
-  { name: "Midjourney", color: "#FF00E5", desc: "Painterly worlds" },
-  { name: "Veo", color: "#7C3AED", desc: "Hyperreal video" },
-  { name: "DALL·E", color: "#22D3EE", desc: "Compositional control" },
-  { name: "Flux", color: "#F472B6", desc: "Detail at scale" },
+  { name: "Sora", color: "#ff3344", desc: "Cinematic motion" },
+  { name: "Midjourney", color: "#ff5577", desc: "Painterly worlds" },
+  { name: "Veo", color: "#cc2233", desc: "Hyperreal video" },
+  { name: "DALL·E", color: "#ff7799", desc: "Compositional control" },
+  { name: "Flux", color: "#e63950", desc: "Detail at scale" },
 ];
 
 export default function RemixStudio() {
@@ -20,7 +20,7 @@ export default function RemixStudio() {
     <section id="studio" className="relative py-32 px-6">
       <div className="mx-auto max-w-[1400px]">
         <div className="flex flex-col items-center text-center mb-16">
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-[11px] tracking-[0.35em] text-cyan-300/80 uppercase mb-4">
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-[11px] tracking-[0.35em] text-zinc-400 uppercase mb-4">
             The Alchemist Studio
           </motion.p>
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-[-0.03em] text-white max-w-3xl">

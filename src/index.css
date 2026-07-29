@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 0 0% 2%;
+    --background: 240 9% 4%;
     --foreground: 0 0% 96%;
     --card: 0 0% 4%;
     --card-foreground: 0 0% 96%;
     --popover: 0 0% 4%;
     --popover-foreground: 0 0% 96%;
-    --primary: 189 100% 50%;
-    --primary-foreground: 0 0% 2%;
+    --primary: 355 100% 60%;
+    --primary-foreground: 0 0% 100%;
     --secondary: 0 0% 8%;
     --secondary-foreground: 0 0% 96%;
     --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 64%;
-    --accent: 300 100% 50%;
-    --accent-foreground: 0 0% 96%;
+    --muted-foreground: 0 0% 53%;
+    --accent: 355 100% 60%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 12%;
     --input: 0 0% 12%;
-    --ring: 189 100% 50%;
+    --ring: 355 100% 60%;
     --radius: 0.75rem;
     --font-heading: ui-sans-serif, system-ui, sans-serif;
     --font-body: ui-sans-serif, system-ui, sans-serif;
@@ -37,12 +37,12 @@
   }
   html { scroll-behavior: smooth; }
   body {
-    background-color: #050505;
+    background-color: #0a0a0c;
     color: #F5F5F7;
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
   }
-  ::selection { background: rgba(0,240,255,0.25); color: #fff; }
+  ::selection { background: rgba(255,51,68,0.30); color: #fff; }
 }
 
 @layer utilities {
@@ -59,16 +59,16 @@
     border: 1px solid rgba(255,255,255,0.10);
   }
   .text-gradient-cyan {
-    background: linear-gradient(120deg, #00F0FF 0%, #FF00E5 100%);
+    background: linear-gradient(120deg, #ff3344 0%, #ff5577 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   .orb-glow {
-    box-shadow: 0 0 80px rgba(0,240,255,0.3), 0 0 200px rgba(255,0,229,0.15), inset 0 0 60px rgba(0,240,255,0.05);
+    box-shadow: 0 0 80px rgba(255,51,68,0.3), 0 0 200px rgba(255,85,119,0.15), inset 0 0 60px rgba(255,51,68,0.05);
   }
   .light-trace {
-    background: linear-gradient(90deg, transparent, rgba(0,240,255,0.7), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,51,68,0.7), transparent);
   }
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

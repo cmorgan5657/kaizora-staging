@@ -8,8 +8,8 @@ export default function KaizoraFooter() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-fuchsia-500 flex items-center justify-center">
-                <span className="text-black font-bold text-lg">K</span>
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#ff3344] to-[#ff5577] flex items-center justify-center">
+                <span className="text-white font-bold text-lg">K</span>
               </div>
               <span className="text-white font-semibold tracking-[0.2em] text-sm">KAIZORA</span>
             </div>

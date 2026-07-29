@@ -5,12 +5,12 @@ const PULSE_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c07
 const PULSE_IMG = "https://media.base44.com/images/public/6a6984ae3df2ae3b9c071a1c/3be652d74_generated_dd400baa.png";
 
 const ITEMS = [
-  { title: "Neon Reverie", author: "@aria", model: "Sora", color: "#00F0FF", video: true },
-  { title: "Liquid Memory", author: "@nova", model: "Midjourney", color: "#FF00E5", video: false },
-  { title: "Crystalline Dawn", author: "@zen", model: "Veo", color: "#7C3AED", video: true },
-  { title: "Hyper Bloom", author: "@kai", model: "Flux", color: "#22D3EE", video: false },
-  { title: "Obsidian Drift", author: "@leo", model: "DALL·E", color: "#F472B6", video: true },
-  { title: "Prism Echo", author: "@mira", model: "Sora", color: "#00F0FF", video: false },
+  { title: "Neon Reverie", author: "@aria", model: "Sora", color: "#ff3344", video: true },
+  { title: "Liquid Memory", author: "@nova", model: "Midjourney", color: "#ff5577", video: false },
+  { title: "Crystalline Dawn", author: "@zen", model: "Veo", color: "#cc2233", video: true },
+  { title: "Hyper Bloom", author: "@kai", model: "Flux", color: "#ff7799", video: false },
+  { title: "Obsidian Drift", author: "@leo", model: "DALL·E", color: "#e63950", video: true },
+  { title: "Prism Echo", author: "@mira", model: "Sora", color: "#ff3344", video: false },
 ];
 
 function PulseCard({ item, onHover }) {
@@ -50,7 +50,7 @@ export default function PulseHub() {
       />
       <div className="relative mx-auto max-w-[1400px]">
         <div className="flex flex-col items-center text-center mb-14">
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-[11px] tracking-[0.35em] text-cyan-300/80 uppercase mb-4">
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-[11px] tracking-[0.35em] text-zinc-400 uppercase mb-4">
             The Pulse
           </motion.p>
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-[-0.03em] text-white max-w-3xl">
