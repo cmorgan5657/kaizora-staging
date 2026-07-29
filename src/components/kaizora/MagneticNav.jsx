@@ -1,13 +1,15 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { Bell, Coins, User } from "lucide-react";
 
 const NAV_ITEMS = [
   { label: "Marketplace", href: "#hero" },
-  { label: "Agents", href: "#agents" },
+  { label: "My Assets", href: "#browse" },
+  { label: "Pulse", href: "#decision" },
   { label: "Decision Layer", href: "#decision" },
-  { label: "Studio", href: "#studio" },
-  { label: "Pulse", href: "#pulse" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Pricing", href: "#footer" },
+  { label: "Dashboard", href: "#how" },
+  { label: "Remix Studio", href: "#drops" },
 ];
 
 function MagneticLink({ item }) {
@@ -62,11 +64,22 @@ export default function MagneticNav() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <button className="hidden sm:flex glass rounded-full w-10 h-10 items-center justify-center text-zinc-300 hover:text-white transition">
+          <div className="hidden sm:flex items-center gap-1.5 rounded-full border border-[#ff3344]/40 px-3 py-1.5">
+            <Coins className="w-4 h-4 text-[#ff3344]" />
+            <span className="text-white font-medium text-sm">648</span>
+            <span className="text-zinc-500 text-xs">credits</span>
+          </div>
+          <button className="hidden sm:flex glass rounded-full w-10 h-10 items-center justify-center text-zinc-300 hover:text-white transition" aria-label="Cart">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
           </button>
-          <button className="rounded-full border border-white/20 text-white text-sm font-semibold px-5 py-2.5 hover:bg-white/10 transition">
-            Sign In
+          <button className="hidden sm:flex glass rounded-full w-10 h-10 items-center justify-center text-zinc-300 hover:text-white transition" aria-label="Notifications">
+            <Bell className="w-4 h-4" />
+          </button>
+          <button className="flex items-center gap-2 rounded-full border border-white/15 px-3 py-1.5 hover:bg-white/10 transition">
+            <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#ff3344] to-[#ff5577] flex items-center justify-center">
+              <User className="w-4 h-4 text-white" />
+            </div>
+            <span className="text-sm text-white font-medium hidden sm:inline">Testing</span>
           </button>
           <button onClick={() => setOpen(!open)} className="lg:hidden glass rounded-full w-10 h-10 flex items-center justify-center text-white">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
