@@ -193,15 +193,8 @@ export default function OrbitalHero() {
       {/* Screen */}
       <div className="relative z-10 flex flex-col items-center px-6">
         <div className="relative w-[min(90vw,540px)] aspect-[9/16]">
-          {/* Rotating conic frame */}
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-            className="absolute -inset-4 rounded-[2rem] opacity-60"
-            style={{ background: "conic-gradient(from 0deg, transparent, rgba(0,240,255,0.4), transparent, rgba(255,0,229,0.4), transparent)" }}
-          />
           {/* Screen media */}
-          <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden orb-glow glass-strong">
+          <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={phase.key}
@@ -226,9 +219,6 @@ export default function OrbitalHero() {
                 )}
               </motion.div>
             </AnimatePresence>
-            {/* Refraction overlay */}
-            <div className="absolute inset-0 rounded-[1.5rem] pointer-events-none"
-              style={{ background: "radial-gradient(circle at 35% 30%, rgba(255,255,255,0.18), transparent 40%), radial-gradient(circle at 70% 75%, rgba(0,240,255,0.16), transparent 50%)" }} />
           </div>
 
           {/* Phase dots */}
