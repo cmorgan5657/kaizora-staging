@@ -5,7 +5,7 @@ import { Image } from "@/components/ui/image";
 const ORB_IMG = "https://media.base44.com/images/public/6a6984ae3df2ae3b9c071a1c/00ac9dd39_generated_image.png";
 const ORB_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/e62a7b4ba_Liquid_Orb.mp4";
 const DECISION_IMG = "https://media.base44.com/images/public/6a6984ae3df2ae3b9c071a1c/9ded05d0d_generated_5149b298.png";
-const DECISION_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/9c986880f_Decision_Layer_Video.mp4";
+const DECISION_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/5e60bfb65_ScreenRecording2026-07-29at120131AM.mov";
 const PULSE_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/d9dfdfc32_Pulse_Model_Video.mp4";
 const STUDIO_IMG = "https://media.base44.com/images/public/6a6984ae3df2ae3b9c071a1c/f2cd5c785_generated_049d3fdd.png";
 const STUDIO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/5f2bb4cc1_ScreenRecording2026-07-29at121128AM.mov";
@@ -13,12 +13,12 @@ const STUDIO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c0
 const KLING_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/321c6a8a4_Kling_Style_Clip.mp4";
 const SEEDANCE_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/a7979bf9e_Seedance_20_Clip.mp4";
 const VEO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/485cff1f7_Veo_Style_Clip.mp4";
-const SORA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/d22a76a5e_Sora_Natural_Clip.mp4";
-const RUNWAY_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/c5c2711f7_Runway_Natural_Clip.mp4";
-const PIKA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/88072619d_Pika_Natural_Clip.mp4";
-const HAILUO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/83fc299f4_Hailuo_Natural_Clip.mp4";
-const LUMA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/730a1fc10_Luma_Natural_Clip.mp4";
-const HUNYUAN_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/c48c09c2e_Hunyuan_Natural_Clip.mp4";
+const SORA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/67faa6e08_Sora_Kata_Clip.mp4";
+const RUNWAY_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/2daec1023_Runway_City_Clip.mp4";
+const PIKA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/6481e9b14_Pika_Drummer_Clip.mp4";
+const HAILUO_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/a5d852302_Hailuo_Skate_Clip.mp4";
+const LUMA_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/3071a5b88_Luma_Chef_Clip.mp4";
+const HUNYUAN_VIDEO = "https://media.base44.com/videos/public/6a6984ae3df2ae3b9c071a1c/01d11437e_Hunyuan_Dunk_Clip.mp4";
 
 const PHASES = [
   {
@@ -64,61 +64,61 @@ const PHASES = [
   {
     key: "sora",
     eyebrow: "SORA · 4K",
-    title: "A single spin,\ncentered",
+    title: "A fluid\nkata sequence",
     accent: "by Sora",
-    sub: "Locked camera · elegant motion",
-    body: "One dancer, one turn — perfect character consistency across every frame.",
-    cta: "Watch the Spin",
+    sub: "Orbit camera · full-body motion",
+    body: "A martial artist moves through a precise form — the camera orbits with perfect continuity.",
+    cta: "Watch the Form",
     media: { type: "video", src: SORA_VIDEO },
   },
   {
     key: "runway",
     eyebrow: "RUNWAY GEN-3 · 4K",
-    title: "Walking\ntoward you",
+    title: "Walking the\ncity night",
     accent: "by Runway",
-    sub: "Dolly-in · centered subject",
-    body: "Smooth approach with the character locked dead-center in the frame.",
+    sub: "Tracking shot · natural stride",
+    body: "A figure in a tailored suit moves through neon streets — the camera tracks with flawless motion.",
     cta: "See the Walk",
     media: { type: "video", src: RUNWAY_VIDEO },
   },
   {
     key: "pika",
-    eyebrow: "PIKA · 4K PORTRAIT",
-    title: "A slow\nturn of the head",
+    eyebrow: "PIKA · 4K",
+    title: "Sticks in\nrhythm",
     accent: "by Pika",
-    sub: "Locked camera · facial consistency",
-    body: "The subtlest motion, held perfectly centered and stable.",
-    cta: "Watch the Turn",
+    sub: "Locked camera · dynamic action",
+    body: "A drummer lands every beat — natural motion captured with perfect energy and consistency.",
+    cta: "Feel the Rhythm",
     media: { type: "video", src: PIKA_VIDEO },
   },
   {
     key: "hailuo",
     eyebrow: "HAILUO · 4K",
-    title: "Fabric in\nthe wind",
+    title: "Air on\nthe ramp",
     accent: "by Hailuo",
-    sub: "Slow zoom · centered figure",
-    body: "A still subject, moving cloth — cinematic slow-push composition.",
-    cta: "Feel the Wind",
+    sub: "Follow camera · slow motion",
+    body: "A skater launches off the ramp — the camera follows the arc with smooth, natural motion.",
+    cta: "Watch the Trick",
     media: { type: "video", src: HAILUO_VIDEO },
   },
   {
     key: "luma",
     eyebrow: "LUMA DREAM MACHINE · 4K",
-    title: "The scene\nrevealed",
+    title: "Precision\non the plate",
     accent: "by Luma",
-    sub: "Pull-back camera · centered subject",
-    body: "The camera retreats while the character holds the dead-center of the frame.",
-    cta: "See the Reveal",
+    sub: "Push-in camera · natural hands",
+    body: "A chef plates with deliberate precision — the camera pushes in with fluid, realistic motion.",
+    cta: "See the Craft",
     media: { type: "video", src: LUMA_VIDEO },
   },
   {
     key: "hunyuan",
     eyebrow: "HUNYUAN · 4K",
-    title: "Hair in\nthe wind",
+    title: "Rise to\nthe rim",
     accent: "by Hunyuan",
-    sub: "Locked camera · character consistency",
-    body: "Golden light meets cyan rim — every strand rendered with perfect continuity.",
-    cta: "Watch the Motion",
+    sub: "Crane camera · slow motion",
+    body: "A player drives to the hoop — the camera rises with the motion in perfect slow-motion.",
+    cta: "Watch the Rise",
     media: { type: "video", src: HUNYUAN_VIDEO },
   },
   {
@@ -149,7 +149,7 @@ const PHASES = [
     sub: "Every top model. One canvas.",
     body: "Drop a 4K asset onto the Orb and let it refract through every frontier model at once.",
     cta: "Open the Studio",
-    media: { type: "image", src: STUDIO_IMG },
+    media: { type: "video", src: STUDIO_VIDEO, poster: STUDIO_IMG },
   },
 ];
 
