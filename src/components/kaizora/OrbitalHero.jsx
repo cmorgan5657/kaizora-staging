@@ -172,6 +172,7 @@ const LIQUID_VARIANTS = [
   { ...LIQUID_BASE, overlay: "agentic" },
   { ...LIQUID_BASE, overlay: "studio" },
   { ...LIQUID_BASE, overlay: "decision" },
+  { ...LIQUID_BASE, overlay: "creators" },
 ];
 
 const SEQUENCE = PHASES.flatMap((p, i) =>
@@ -242,6 +243,11 @@ export default function OrbitalHero() {
                       <>
                         <span className="text-[#ff3344] font-display font-bold text-4xl sm:text-5xl tracking-tight" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>Decision</span>
                         <span className="text-[#ff3344] font-display font-bold text-4xl sm:text-5xl tracking-tight" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>Layer</span>
+                      </>
+                    ) : phase.overlay === "creators" ? (
+                      <>
+                        <span className="text-[#ff3344] font-display font-bold text-2xl sm:text-3xl tracking-tight" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>For AI Content Creators</span>
+                        <span className="text-[#ff3344] font-display font-bold text-2xl sm:text-3xl tracking-tight" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>By AI Content Creators</span>
                       </>
                     ) : (
                       <>
