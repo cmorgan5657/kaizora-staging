@@ -8,7 +8,6 @@ import DecisionLayer from "@/components/kaizora/DecisionLayer";
 import HowItWorks from "@/components/kaizora/HowItWorks";
 import FeaturedDrops from "@/components/kaizora/FeaturedDrops";
 import KaizoraFooter from "@/components/kaizora/KaizoraFooter";
-import MusicControl from "@/components/kaizora/MusicControl";
 
 export default function Home() {
   return (
@@ -30,7 +29,6 @@ export default function Home() {
           <FeaturedDrops />
         </main>
         <KaizoraFooter />
-        <MusicControl />
       </div>
     </div>
   );

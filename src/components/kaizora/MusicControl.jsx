@@ -28,13 +28,13 @@ export default function MusicControl() {
         await audio.play();
         setPlaying(true);
       } catch {
-        // autoplay blocked — user can try again
+        // autoplay blocked
       }
     }
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[60] flex items-center gap-2">
+    <div className="relative flex items-center">
       <audio ref={audioRef} src={TRACK_URL} loop preload="auto" />
 
       <AnimatePresence>
@@ -44,7 +44,7 @@ export default function MusicControl() {
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: 12, scale: 0.9 }}
             transition={{ duration: 0.18 }}
-            className="glass-strong rounded-full px-4 py-2.5 flex items-center gap-3"
+            className="absolute right-12 top-1/2 -translate-y-1/2 glass-strong rounded-full px-3 py-2 flex items-center gap-2"
           >
             <input
               type="range"
@@ -54,7 +54,7 @@ export default function MusicControl() {
               value={volume}
               onChange={(e) => setVolume(parseFloat(e.target.value))}
               aria-label="Volume"
-              className="w-28 accent-[#ff3344] cursor-pointer"
+              className="w-24 accent-[#ff3344] cursor-pointer"
             />
             <span className="text-xs text-zinc-400 tabular-nums w-7 text-right">
               {Math.round(volume * 100)}
@@ -63,24 +63,15 @@ export default function MusicControl() {
         )}
       </AnimatePresence>
 
-      <motion.button
-        whileHover={{ scale: 1.06 }}
-        whileTap={{ scale: 0.94 }}
+      <button
         onClick={togglePlay}
         onMouseEnter={() => setShowVolume(true)}
         onMouseLeave={() => setShowVolume(false)}
         aria-label={playing ? "Mute music" : "Play music"}
-        className="relative w-12 h-12 rounded-full glass-strong flex items-center justify-center text-[#ff3344] hover:text-white transition-colors border border-[#ff3344]/30"
+        className="glass rounded-full w-10 h-10 flex items-center justify-center text-[#ff3344] hover:text-white transition"
       >
-        {playing ? (
-          <Volume2 className="w-5 h-5" />
-        ) : (
-          <VolumeX className="w-5 h-5" />
-        )}
-        {playing && (
-          <span className="absolute inset-0 rounded-full border border-[#ff3344]/40 animate-ping" />
-        )}
-      </motion.button>
+        {playing ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
+      </button>
     </div>
   );
 }
