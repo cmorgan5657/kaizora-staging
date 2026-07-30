@@ -22,7 +22,7 @@ export default function KaizoraFooter() {
     <footer id="footer" className="relative border-t border-white/5 pt-16 pb-10 px-6">
       <div className="mx-auto max-w-[1200px]">
         <div className="flex justify-center mb-14">
-          <button className="rounded-full border border-[#ff3344] text-[#ff3344] text-sm font-semibold px-7 py-3 hover:bg-[#ff3344]/10 transition">
+          <button className="rounded-full border border-[#ff3344] text-white text-sm font-semibold px-7 py-3 hover:border-[#D90429] hover:bg-[#D90429]/10 hover:shadow-[0_0_14px_rgba(217,4,41,0.91),0_0_28px_rgba(217,4,41,0.46)] transition">
             View All AI Content
           </button>
         </div>
