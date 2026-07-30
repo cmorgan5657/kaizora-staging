@@ -40,7 +40,7 @@ export default function Login() {
       title="Welcome Back"
       subtitle="Log in to your Kaizora account"
       footer={
-        <>
+        <span className="text-[17px]">
           Don't have an account?{" "}
           <Link
             to={"/register" + (returnTo !== "/" ? "?returnTo=" + encodeURIComponent(returnTo) : "")}
@@ -48,7 +48,7 @@ export default function Login() {
           >
             Sign up
           </Link>
-        </>
+        </span>
       }
     >
       <div className="space-y-3">
