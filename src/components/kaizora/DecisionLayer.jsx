@@ -19,7 +19,7 @@ export default function DecisionLayer() {
         <p className="mt-6 text-[#a0a0a0] text-lg leading-relaxed max-w-xl mx-auto">
           KAIZORA's Decision Layer helps creators quickly determine what's worth monetizing, how to price it directionally, and who it's for before publishing or marketing anything.
         </p>
-        <button className="mt-9 inline-flex items-center gap-2 rounded-full px-7 py-3.5 border border-[#ff3344]/60 text-white text-sm font-semibold hover:bg-[#ff3344]/10 transition shadow-[0_0_30px_rgba(255,51,68,0.2)]">
+        <button className="mt-9 inline-flex items-center gap-2 rounded-full px-7 py-3.5 border border-[#ff3344]/60 text-white text-sm font-semibold hover:border-[#D90429] hover:bg-[#D90429]/10 hover:shadow-[0_0_14px_rgba(217,4,41,0.91),0_0_28px_rgba(217,4,41,0.46)] transition shadow-[0_0_30px_rgba(255,51,68,0.2)]">
           Try the Decision Layer <ArrowRight className="w-4 h-4" />
         </button>
       </div>
