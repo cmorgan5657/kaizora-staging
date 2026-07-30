@@ -81,8 +81,8 @@ export default function FeaturedDrops() {
                   <span>by {d.by}</span>
                 </div>
                 <div className="grid grid-cols-2 gap-2">
-                  <button className="rounded-lg border border-white/25 text-white text-sm font-medium py-2 hover:bg-white/10 transition">Buy</button>
-                  <button className="rounded-lg border border-white/25 text-white text-sm font-medium py-2 hover:bg-white/10 transition">Remix</button>
+                  <button className="rounded-lg border border-[#ff3344] text-white text-sm font-medium py-2 hover:border-[#D90429] hover:bg-[#D90429]/10 hover:shadow-[0_0_14px_rgba(217,4,41,0.91),0_0_28px_rgba(217,4,41,0.46)] transition">Buy</button>
+                  <button className="rounded-lg border border-[#ff3344] text-white text-sm font-medium py-2 hover:border-[#D90429] hover:bg-[#D90429]/10 hover:shadow-[0_0_14px_rgba(217,4,41,0.91),0_0_28px_rgba(217,4,41,0.46)] transition">Remix</button>
                 </div>
               </div>
             </motion.div>
