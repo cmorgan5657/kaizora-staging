@@ -11,7 +11,7 @@ import KaizoraFooter from "@/components/kaizora/KaizoraFooter";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-[#0a0a0c] text-white overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#16161c] text-white overflow-x-hidden">
       {/* Global ambient gradient */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute top-0 left-1/4 w-[40vw] h-[40vw] rounded-full opacity-[0.08]" style={{ background: "radial-gradient(circle, #ff3344, transparent 70%)" }} />
