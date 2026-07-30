@@ -299,7 +299,7 @@ export default function OrbitalHero() {
               </h1>
               <p className="mt-6 text-lg font-semibold text-[#ff3344]">{phase.sub}</p>
               <p className="mt-2 text-base text-zinc-300">{phase.body}</p>
-              <button className="mt-9 inline-flex items-center gap-2 rounded-full px-8 py-4 bg-[#ff3344] text-white font-semibold text-sm hover:bg-[#ff5577] transition group">
+              <button className="mt-9 inline-flex items-center gap-2 rounded-full px-8 py-4 border border-[#ff3344] text-white font-semibold text-sm hover:border-[#D90429] hover:bg-[#D90429]/10 hover:shadow-[0_0_14px_rgba(217,4,41,0.91),0_0_28px_rgba(217,4,41,0.46)] transition group">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.5 6.5L20 10l-6.5 1.5L12 18l-1.5-6.5L4 10l6.5-1.5z"/></svg>
                 {phase.cta}
               </button>
