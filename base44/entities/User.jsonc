@@ -7,6 +7,43 @@
         "admin",
         "user"
       ]
+    },
+    "name": {
+      "type": "string",
+      "description": "The user's full display name"
+    },
+    "date_of_birth": {
+      "type": "string",
+      "format": "date",
+      "description": "The user's date of birth"
+    },
+    "bio": {
+      "type": "string",
+      "description": "A short optional biography"
+    },
+    "social_links": {
+      "type": "object",
+      "description": "Optional links to the user's social profiles",
+      "properties": {
+        "website": {
+          "type": "string"
+        },
+        "twitter": {
+          "type": "string"
+        },
+        "instagram": {
+          "type": "string"
+        }
+      }
+    },
+    "agreed_terms": {
+      "type": "boolean",
+      "description": "Whether the user agreed to the terms"
+    },
+    "agreed_terms_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the user agreed to the terms"
     }
   },
   "required": [

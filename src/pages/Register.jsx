@@ -4,6 +4,7 @@ import { base44 } from "@/api/base44Client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { UserPlus, Mail, Loader2 } from "lucide-react";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
 import AuthLayout from "@/components/AuthLayout";
@@ -13,9 +14,16 @@ import { toast } from "@/components/ui/use-toast";
 import { safeReturnTo } from "@/lib/authReturnTo";
 
 export default function Register() {
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
+  const [dob, setDob] = useState("");
+  const [bio, setBio] = useState("");
+  const [website, setWebsite] = useState("");
+  const [twitter, setTwitter] = useState("");
+  const [instagram, setInstagram] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [agreedTerms, setAgreedTerms] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [showOtp, setShowOtp] = useState(false);
@@ -26,6 +34,10 @@ export default function Register() {
     setError("");
     if (password !== confirmPassword) {
       setError("Passwords do not match");
+      return;
+    }
+    if (!agreedTerms) {
+      setError("You must agree to the Terms to continue");
       return;
     }
     setLoading(true);
@@ -46,6 +58,22 @@ export default function Register() {
       const result = await base44.auth.verifyOtp({ email, otpCode });
       if (result?.access_token) {
         base44.auth.setToken(result.access_token);
+      }
+      try {
+        await base44.auth.updateMe({
+          name: fullName,
+          date_of_birth: dob || undefined,
+          bio: bio || undefined,
+          social_links: {
+            website: website || undefined,
+            twitter: twitter || undefined,
+            instagram: instagram || undefined,
+          },
+          agreed_terms: true,
+          agreed_terms_at: new Date().toISOString(),
+        });
+      } catch {
+        // profile extras are best-effort; don't block login
       }
       window.location.href = safeReturnTo();
     } catch (err) {
@@ -145,6 +173,22 @@ export default function Register() {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-2">
+          <Label htmlFor="name" className="text-[10px] tracking-[0.2em] text-zinc-400 uppercase">
+            Full Name
+          </Label>
+          <Input
+            id="name"
+            type="text"
+            autoComplete="name"
+            autoFocus
+            placeholder="Jane Doe"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            className="h-11 bg-white/5 border-white/10 focus-visible:border-[#ff3344]/60 focus-visible:ring-[#ff3344]/30"
+            required
+          />
+        </div>
+        <div className="space-y-2">
           <Label htmlFor="email" className="text-[10px] tracking-[0.2em] text-zinc-400 uppercase">
             Email
           </Label>
@@ -154,12 +198,65 @@ export default function Register() {
               id="email"
               type="email"
               autoComplete="email"
-              autoFocus
               placeholder="you@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="pl-10 h-11 bg-white/5 border-white/10 focus-visible:border-[#ff3344]/60 focus-visible:ring-[#ff3344]/30"
               required
+            />
+          </div>
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="dob" className="text-[10px] tracking-[0.2em] text-zinc-400 uppercase">
+            Date of Birth
+          </Label>
+          <Input
+            id="dob"
+            type="date"
+            value={dob}
+            onChange={(e) => setDob(e.target.value)}
+            className="h-11 bg-white/5 border-white/10 focus-visible:border-[#ff3344]/60 focus-visible:ring-[#ff3344]/30"
+            required
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="bio" className="text-[10px] tracking-[0.2em] text-zinc-400 uppercase">
+            Bio <span className="text-zinc-600 normal-case tracking-normal">(optional)</span>
+          </Label>
+          <Textarea
+            id="bio"
+            rows={3}
+            placeholder="Tell the community about yourself..."
+            value={bio}
+            onChange={(e) => setBio(e.target.value)}
+            className="bg-white/5 border-white/10 focus-visible:border-[#ff3344]/60 focus-visible:ring-[#ff3344]/30 resize-none"
+          />
+        </div>
+        <div className="space-y-2">
+          <Label className="text-[10px] tracking-[0.2em] text-zinc-400 uppercase">
+            Social Links <span className="text-zinc-600 normal-case tracking-normal">(optional)</span>
+          </Label>
+          <div className="space-y-2">
+            <Input
+              type="url"
+              placeholder="Website URL"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              className="h-11 bg-white/5 border-white/10 focus-visible:border-[#ff3344]/60 focus-visible:ring-[#ff3344]/30"
+            />
+            <Input
+              type="text"
+              placeholder="X / Twitter handle"
+              value={twitter}
+              onChange={(e) => setTwitter(e.target.value)}
+              className="h-11 bg-white/5 border-white/10 focus-visible:border-[#ff3344]/60 focus-visible:ring-[#ff3344]/30"
+            />
+            <Input
+              type="text"
+              placeholder="Instagram handle"
+              value={instagram}
+              onChange={(e) => setInstagram(e.target.value)}
+              className="h-11 bg-white/5 border-white/10 focus-visible:border-[#ff3344]/60 focus-visible:ring-[#ff3344]/30"
             />
           </div>
         </div>
@@ -188,6 +285,20 @@ export default function Register() {
             placeholder="••••••••"
           />
         </div>
+        <label className="flex items-start gap-2 text-sm text-zinc-400 cursor-pointer select-none">
+          <input
+            type="checkbox"
+            checked={agreedTerms}
+            onChange={(e) => setAgreedTerms(e.target.checked)}
+            className="accent-[#ff3344] w-4 h-4 rounded mt-0.5"
+            required
+          />
+          <span>
+            I agree to the{" "}
+            <a href="#" className="text-[#ff3344] hover:underline">Terms of Service</a> and{" "}
+            <a href="#" className="text-[#ff3344] hover:underline">Privacy Policy</a>.
+          </span>
+        </label>
         <Button
           type="submit"
           disabled={loading}
