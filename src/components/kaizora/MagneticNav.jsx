@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import MusicControl from "@/components/kaizora/MusicControl";
 
 const NAV_ITEMS = [
@@ -68,9 +69,12 @@ export default function MagneticNav() {
           <button className="flex items-center justify-center rounded-full border border-white/15 w-10 h-10 text-white hover:bg-white/10 transition" aria-label="Cart">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
           </button>
-          <button className="rounded-full border border-[#ff3344] h-7 px-3.5 flex items-center text-[9px] font-semibold tracking-wide text-zinc-300 hover:text-white hover:border-[#D90429] hover:bg-[#D90429]/10 hover:shadow-[0_0_14px_rgba(217,4,41,0.7),0_0_28px_rgba(217,4,41,0.35)] transition-all duration-300">
+          <Link to="/login" className="rounded-full border border-[#ff3344] h-7 px-3.5 flex items-center text-[9px] font-semibold tracking-wide text-zinc-300 hover:text-white hover:border-[#D90429] hover:bg-[#D90429]/10 hover:shadow-[0_0_14px_rgba(217,4,41,0.7),0_0_28px_rgba(217,4,41,0.35)] transition-all duration-300">
             Sign In
-          </button>
+          </Link>
+          <Link to="/register" className="rounded-full bg-[#ff3344] border border-[#ff3344] h-7 px-3.5 flex items-center text-[9px] font-semibold tracking-wide text-white hover:bg-[#ff4455] hover:shadow-[0_0_14px_rgba(255,51,68,0.8),0_0_28px_rgba(255,51,68,0.4)] transition-all duration-300">
+            Sign Up
+          </Link>
           <button onClick={() => setOpen(!open)} className="md:hidden rounded-full border border-white/15 w-10 h-10 flex items-center justify-center text-white">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
           </button>

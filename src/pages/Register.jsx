@@ -4,10 +4,11 @@ import { base44 } from "@/api/base44Client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { UserPlus, Mail, Lock, Loader2 } from "lucide-react";
+import { UserPlus, Mail, Loader2 } from "lucide-react";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
 import AuthLayout from "@/components/AuthLayout";
-import GoogleIcon from "@/components/GoogleIcon";
+import { AuthDivider, AuthError, GoogleButton, AppleButton } from "@/components/kaizora/AuthBits";
+import PasswordInput from "@/components/kaizora/PasswordInput";
 import { toast } from "@/components/ui/use-toast";
 import { safeReturnTo } from "@/lib/authReturnTo";
 
@@ -67,22 +68,13 @@ export default function Register() {
     }
   };
 
-  const handleGoogle = () => {
-    base44.auth.loginWithProvider("google", safeReturnTo());
-  };
+  const handleGoogle = () => base44.auth.loginWithProvider("google", safeReturnTo());
+  const handleApple = () => base44.auth.loginWithProvider("apple", safeReturnTo());
 
   if (showOtp) {
     return (
-      <AuthLayout
-        icon={Mail}
-        title="Verify your email"
-        subtitle={`We sent a code to ${email}`}
-      >
-        {error && (
-          <div className="mb-4 p-3 rounded-lg bg-destructive/10 text-destructive text-sm">
-            {error}
-          </div>
-        )}
+      <AuthLayout icon={Mail} title="Verify your email" subtitle={`We sent a code to ${email}`}>
+        {error && <AuthError>{error}</AuthError>}
         <div className="flex justify-center mb-6">
           <InputOTP
             maxLength={6}
@@ -102,7 +94,7 @@ export default function Register() {
           </InputOTP>
         </div>
         <Button
-          className="w-full h-12 font-medium"
+          className="w-full h-11 bg-[#ff3344] hover:bg-[#ff4455] hover:shadow-[0_0_22px_rgba(255,51,68,0.5)] text-white font-medium border-0"
           onClick={handleVerify}
           disabled={loading || otpCode.length < 6}
         >
@@ -115,9 +107,9 @@ export default function Register() {
             "Verify"
           )}
         </Button>
-        <p className="text-center text-sm text-muted-foreground mt-4">
+        <p className="text-center text-sm text-zinc-400 mt-4">
           Didn't receive the code?{" "}
-          <button onClick={handleResend} className="text-primary font-medium hover:underline">
+          <button onClick={handleResend} className="text-[#ff3344] font-medium hover:underline">
             Resend
           </button>
         </p>
@@ -128,49 +120,36 @@ export default function Register() {
   return (
     <AuthLayout
       icon={UserPlus}
-      title="Create your account"
-      subtitle="Sign up to get started"
+      title="Create Account"
+      subtitle="Sign up to join the marketplace"
       footer={
         <>
           Already have an account?{" "}
           <Link
             to={"/login" + (safeReturnTo() !== "/" ? "?returnTo=" + encodeURIComponent(safeReturnTo()) : "")}
-            className="text-primary font-medium hover:underline"
+            className="text-[#ff3344] font-medium hover:underline"
           >
-            Log in
+            Sign in
           </Link>
         </>
       }
     >
-      <Button
-        variant="outline"
-        className="w-full h-12 text-sm font-medium mb-6"
-        onClick={handleGoogle}
-      >
-        <GoogleIcon className="w-5 h-5 mr-2" />
-        Continue with Google
-      </Button>
-
-      <div className="relative mb-6">
-        <div className="absolute inset-0 flex items-center">
-          <div className="w-full border-t border-border" />
-        </div>
-        <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-card px-3 text-muted-foreground">or</span>
-        </div>
+      <div className="space-y-3">
+        <GoogleButton onClick={handleGoogle} />
+        <AppleButton onClick={handleApple} />
       </div>
 
-      {error && (
-        <div className="mb-4 p-3 rounded-lg bg-destructive/10 text-destructive text-sm">
-          {error}
-        </div>
-      )}
+      <AuthDivider />
+
+      {error && <AuthError>{error}</AuthError>}
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email" className="text-[10px] tracking-[0.2em] text-zinc-400 uppercase">
+            Email
+          </Label>
           <div className="relative">
-            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" aria-hidden="true" />
+            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" aria-hidden="true" />
             <Input
               id="email"
               type="email"
@@ -179,51 +158,48 @@ export default function Register() {
               placeholder="you@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="pl-10 h-12"
+              className="pl-10 h-11 bg-white/5 border-white/10 focus-visible:border-[#ff3344]/60 focus-visible:ring-[#ff3344]/30"
               required
             />
           </div>
         </div>
         <div className="space-y-2">
-          <Label htmlFor="password">Password</Label>
-          <div className="relative">
-            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" aria-hidden="true" />
-            <Input
-              id="password"
-              type="password"
-              autoComplete="new-password"
-              placeholder="••••••••"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="pl-10 h-12"
-              required
-            />
-          </div>
+          <Label htmlFor="password" className="text-[10px] tracking-[0.2em] text-zinc-400 uppercase">
+            Password
+          </Label>
+          <PasswordInput
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            autoComplete="new-password"
+            placeholder="••••••••"
+          />
+          <p className="text-xs text-zinc-500">Must be at least 6 characters</p>
         </div>
         <div className="space-y-2">
-          <Label htmlFor="confirm">Confirm Password</Label>
-          <div className="relative">
-            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" aria-hidden="true" />
-            <Input
-              id="confirm"
-              type="password"
-              autoComplete="new-password"
-              placeholder="••••••••"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              className="pl-10 h-12"
-              required
-            />
-          </div>
+          <Label htmlFor="confirm" className="text-[10px] tracking-[0.2em] text-zinc-400 uppercase">
+            Confirm Password
+          </Label>
+          <PasswordInput
+            id="confirm"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            autoComplete="new-password"
+            placeholder="••••••••"
+          />
         </div>
-        <Button type="submit" className="w-full h-12 font-medium" disabled={loading}>
+        <Button
+          type="submit"
+          disabled={loading}
+          className="w-full h-11 bg-[#ff3344] hover:bg-[#ff4455] hover:shadow-[0_0_22px_rgba(255,51,68,0.5)] text-white font-medium border-0"
+        >
           {loading ? (
             <>
               <Loader2 className="w-4 h-4 mr-2 animate-spin" />
               Creating account...
             </>
           ) : (
-            "Create account"
+            "Sign Up"
           )}
         </Button>
       </form>

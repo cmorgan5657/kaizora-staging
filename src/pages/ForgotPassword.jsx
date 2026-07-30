@@ -31,21 +31,24 @@ export default function ForgotPassword() {
       title="Reset password"
       subtitle="We'll send you a link to reset it"
       footer={
-        <Link to="/login" className="text-primary font-medium hover:underline">
-          <ArrowLeft className="w-3 h-3 inline mr-1" />Back to log in
+        <Link to="/login" className="text-[#ff3344] font-medium hover:underline">
+          <ArrowLeft className="w-3 h-3 inline mr-1" />
+          Back to log in
         </Link>
       }
     >
       {sent ? (
-        <p className="text-sm text-foreground text-center">
+        <p className="text-sm text-zinc-300 text-center leading-relaxed">
           If an account exists with that email, you'll receive a password reset link shortly.
         </p>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="email">Email address</Label>
+            <Label htmlFor="email" className="text-[10px] tracking-[0.2em] text-zinc-400 uppercase">
+              Email address
+            </Label>
             <div className="relative">
-              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" aria-hidden="true" />
+              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" aria-hidden="true" />
               <Input
                 id="email"
                 type="email"
@@ -54,12 +57,16 @@ export default function ForgotPassword() {
                 placeholder="you@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="pl-10 h-12"
+                className="pl-10 h-11 bg-white/5 border-white/10 focus-visible:border-[#ff3344]/60 focus-visible:ring-[#ff3344]/30"
                 required
               />
             </div>
           </div>
-          <Button type="submit" className="w-full h-12 font-medium" disabled={loading}>
+          <Button
+            type="submit"
+            disabled={loading}
+            className="w-full h-11 bg-[#ff3344] hover:bg-[#ff4455] hover:shadow-[0_0_22px_rgba(255,51,68,0.5)] text-white font-medium border-0"
+          >
             {loading ? (
               <>
                 <Loader2 className="w-4 h-4 mr-2 animate-spin" />
