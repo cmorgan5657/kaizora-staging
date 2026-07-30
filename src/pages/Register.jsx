@@ -151,7 +151,7 @@ export default function Register() {
       title="Create Account"
       subtitle="Sign up to join the marketplace"
       footer={
-        <>
+        <span className="text-[17px]">
           Already have an account?{" "}
           <Link
             to={"/login" + (safeReturnTo() !== "/" ? "?returnTo=" + encodeURIComponent(safeReturnTo()) : "")}
@@ -159,7 +159,7 @@ export default function Register() {
           >
             Sign in
           </Link>
-        </>
+        </span>
       }
     >
       <div className="space-y-3">
