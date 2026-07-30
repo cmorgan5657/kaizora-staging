@@ -46,7 +46,7 @@ function Panel({ icon: Icon, title, accent, sub, features, cta, ctaStyle }) {
       <button
         className={`mt-9 w-full rounded-xl px-6 py-3.5 text-sm font-semibold transition ${
           ctaStyle === "outline"
-            ? "border border-[#ff3344] text-white hover:bg-[#ff3344]/10"
+            ? "border border-[#ff3344] text-white hover:border-[#D90429] hover:bg-[#D90429]/10 hover:shadow-[0_0_14px_rgba(217,4,41,0.91),0_0_28px_rgba(217,4,41,0.46)]"
             : "bg-[#ff3344] text-white hover:bg-[#ff5577]"
         }`}
       >
