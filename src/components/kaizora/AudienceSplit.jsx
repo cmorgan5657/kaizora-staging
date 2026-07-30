@@ -68,7 +68,7 @@ export default function AudienceSplit() {
             sub="Monetize your AI generations. Transform creative experiments into revenue."
             features={CREATOR_FEATURES}
             cta="Start Uploading"
-            ctaStyle="solid"
+            ctaStyle="outline"
           />
           <Panel
             icon={ShoppingCart}
