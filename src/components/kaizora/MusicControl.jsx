@@ -35,20 +35,28 @@ export default function MusicControl() {
 
   return (
     <div
-      className="relative flex items-center gap-2"
+      className="relative flex items-center"
       onMouseEnter={() => setShowVolume(true)}
       onMouseLeave={() => setShowVolume(false)}
     >
       <audio ref={audioRef} src={TRACK_URL} loop preload="auto" />
 
+      <button
+        onClick={togglePlay}
+        aria-label={playing ? "Mute music" : "Play music"}
+        className="glass rounded-full w-10 h-10 flex items-center justify-center text-[#ff3344] hover:text-white transition shrink-0"
+      >
+        {playing ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
+      </button>
+
       <AnimatePresence>
         {showVolume && (
           <motion.div
-            initial={{ opacity: 0, width: 0, scale: 0.9 }}
-            animate={{ opacity: 1, width: "auto", scale: 1 }}
-            exit={{ opacity: 0, width: 0, scale: 0.9 }}
+            initial={{ opacity: 0, y: -8, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -8, scale: 0.9 }}
             transition={{ duration: 0.18 }}
-            className="glass-strong rounded-full px-3 py-2 flex items-center gap-2 overflow-hidden"
+            className="absolute right-0 top-12 z-50 glass-strong rounded-2xl px-3 py-4 flex flex-col items-center gap-3"
           >
             <input
               type="range"
@@ -58,22 +66,16 @@ export default function MusicControl() {
               value={volume}
               onChange={(e) => setVolume(parseFloat(e.target.value))}
               aria-label="Volume"
-              className="w-24 accent-[#ff3344] cursor-pointer"
+              orient="vertical"
+              className="h-28 w-2 accent-[#ff3344] cursor-pointer"
+              style={{ writingMode: "vertical-lr", direction: "rtl" }}
             />
-            <span className="text-xs text-zinc-400 tabular-nums w-7 text-right">
+            <span className="text-xs text-zinc-400 tabular-nums">
               {Math.round(volume * 100)}
             </span>
           </motion.div>
         )}
       </AnimatePresence>
-
-      <button
-        onClick={togglePlay}
-        aria-label={playing ? "Mute music" : "Play music"}
-        className="glass rounded-full w-10 h-10 flex items-center justify-center text-[#ff3344] hover:text-white transition shrink-0"
-      >
-        {playing ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
-      </button>
     </div>
   );
 }
